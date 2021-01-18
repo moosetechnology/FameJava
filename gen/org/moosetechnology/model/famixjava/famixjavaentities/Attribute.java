@@ -41,11 +41,11 @@ public class Attribute extends NamedEntity implements TNamedEntity, TWithClassSc
     
     private Collection<TAccess> incomingAccesses; 
 
-    private Boolean isClassSide;
+    private Boolean isClassSide = false;
     
-    private Boolean isFinal;
+    private Boolean isFinal = false;
     
-    private Boolean isStub;
+    private Boolean isStub = false;
     
     private String name;
     

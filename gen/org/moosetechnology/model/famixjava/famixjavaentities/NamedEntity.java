@@ -349,7 +349,10 @@ public class NamedEntity extends SourcedEntity implements TNamedEntity, TSourceE
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
     
-
+    @Override
+    public String toString() {
+    	return getClass().getCanonicalName() + ": " + getName();
+    }
 
 }
 

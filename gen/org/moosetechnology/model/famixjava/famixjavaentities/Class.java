@@ -44,7 +44,7 @@ import org.moosetechnology.model.famixjava.moosequery.TOODependencyQueries;
 @FameDescription("Class")
 public class Class extends Type implements TWithExceptions, TSourceEntity, TCanBeFinal, TOODependencyQueries, TReferenceable, TLCOMMetrics, TType, TPackageable, THasVisibility, TNamedEntity, TWithAttributes, TWithMethods, TEntityMetaLevelDependency, TWithInheritances, TInvocationsReceiver, TCanBeAbstract, TWithSourceLanguage, TClass, TWithComments {
 
-    private Boolean isInterface;
+    private Boolean isInterface = false;
     
     private Collection<TAttribute> attributes; 
 
@@ -56,11 +56,11 @@ public class Class extends Type implements TWithExceptions, TSourceEntity, TCanB
 
     private Collection<TReference> incomingReferences; 
 
-    private Boolean isAbstract;
+    private Boolean isAbstract = false;
     
-    private Boolean isFinal;
+    private Boolean isFinal = false;
     
-    private Boolean isStub;
+    private Boolean isStub = false;
     
     private Collection<TMethod> methods; 
 
@@ -82,7 +82,7 @@ public class Class extends Type implements TWithExceptions, TSourceEntity, TCanB
     
     private Collection<TTypedEntity> typedEntities; 
 
-    private String visibility;
+    private String visibility = "";
     
 
 
@@ -388,20 +388,17 @@ public class Class extends Type implements TWithExceptions, TSourceEntity, TCanB
     
     @FameProperty(name = "isPrivate", derived = true)
     public Boolean getIsPrivate() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
+        return this.visibility.equals("private");  
     }
     
     @FameProperty(name = "isProtected", derived = true)
     public Boolean getIsProtected() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
+        return this.visibility.equals("protected");  
     }
     
     @FameProperty(name = "isPublic", derived = true)
     public Boolean getIsPublic() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
+        return this.visibility.equals("public");  
     }
     
     @FameProperty(name = "isStub")

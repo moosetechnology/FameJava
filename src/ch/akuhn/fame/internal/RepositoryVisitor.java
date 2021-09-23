@@ -108,9 +108,19 @@ public class RepositoryVisitor implements Runnable {
 //                        if (isComposite) {
 //                            this.acceptElement(value);
 //                        } else {
-                        Integer serial = getSerialNumber(property, value);
-                        assert serial != null;
-                        visitor.reference(serial);
+                    	try {
+                    		Integer serial = getSerialNumber(property, value);
+                    		assert serial != null;
+                    		visitor.reference(serial);
+                    	}
+                    	catch (UnknownElementError e) {
+                    		System.err.println("** Got an exception while visiting Famix repositroy entities.\n" +
+                    				"  This might happen when an entity inside the repository has a property refering an entity outside the repository\n" +
+                    				"  Referring entity ID: " + getSerialNumber(meta, each) + " (a "+ meta.getFullname() +"), with referring property: " + property.getName());
+                    		if (value != null) {
+                    			System.err.println("  Referred entity type: " + value.getClass().getCanonicalName() );
+                    		}
+                    	}
 //                        }
                     }
                     if (valueIterator.hasNext()) {

@@ -18,6 +18,6 @@ To generate the java code from a *.mse* file please:
 
 ## Developer
 
-In order to make it work with [VerveineJ](https://github.com/moosetechnology/VerveineJ), you **must** compile with Java 10!
+To make it work with [VerveineJ](https://github.com/moosetechnology/VerveineJ), you **must** compile with Java 10!
 
 ## License: GNU LESSER GENERAL PUBLIC LICENSE

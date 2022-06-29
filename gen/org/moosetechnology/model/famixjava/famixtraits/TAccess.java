@@ -11,21 +11,21 @@ import org.moosetechnology.model.famixjava.moosequery.TAssociationMetaLevelDepen
 @FameDescription("TAccess")
 public interface TAccess  {
 
-        @FameProperty(name = "accessor", opposite = "accesses")
+        @FameProperty(name = "isReadWriteUnknown", derived = true)
+    public Boolean getIsReadWriteUnknown();
+
+    @FameProperty(name = "isRead", derived = true)
+    public Boolean getIsRead();
+
+    @FameProperty(name = "accessor", opposite = "accesses")
     public TWithAccesses getAccessor();
 
     public void setAccessor(TWithAccesses accessor);
-
-    @FameProperty(name = "isReadWriteUnknown", derived = true)
-    public Boolean getIsReadWriteUnknown();
 
     @FameProperty(name = "variable", opposite = "incomingAccesses")
     public TAccessible getVariable();
 
     public void setVariable(TAccessible variable);
-
-    @FameProperty(name = "isRead", derived = true)
-    public Boolean getIsRead();
 
     @FameProperty(name = "isWrite")
     public Boolean getIsWrite();

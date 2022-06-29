@@ -12,36 +12,11 @@ import org.moosetechnology.model.famixjava.moosequery.TOODependencyQueries;
 @FameDescription("TMethod")
 public interface TMethod  {
 
-        @FameProperty(name = "isGetter", derived = true)
-    public Boolean getIsGetter();
-
-    @FameProperty(name = "isConstant", derived = true)
-    public Boolean getIsConstant();
-
-    @FameProperty(name = "hierarchyNestingLevel", derived = true)
-    public Number getHierarchyNestingLevel();
-
-    @FameProperty(name = "kind")
-    public String getKind();
-
-    public void setKind(String kind);
-
-    @FameProperty(name = "isConstructor", derived = true)
-    public Boolean getIsConstructor();
-
-    @FameProperty(name = "isSetter", derived = true)
-    public Boolean getIsSetter();
-
-    @FameProperty(name = "hasClassScope", derived = true)
+        @FameProperty(name = "hasClassScope", derived = true)
     public Boolean getHasClassScope();
 
     @FameProperty(name = "numberOfMessageSends", derived = true)
     public Number getNumberOfMessageSends();
-
-    @FameProperty(name = "isClassSide")
-    public Boolean getIsClassSide();
-
-    public void setIsClassSide(Boolean isClassSide);
 
     @FameProperty(name = "parentType", opposite = "methods", container = true)
     public TWithMethods getParentType();

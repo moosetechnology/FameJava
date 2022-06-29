@@ -16,7 +16,7 @@ import org.moosetechnology.model.famixjava.famixtraits.TWithParameterizedTypes;
 
 @FamePackage("Famix-Java-Entities")
 @FameDescription("ParameterizedType")
-public class ParameterizedType extends Type implements TWithParameterizedTypeUsers, TWithInheritances, TParameterizedType {
+public class ParameterizedType extends Type implements TParameterizedType, TWithInheritances, TWithParameterizedTypeUsers {
 
     private Collection<TParameterizedTypeUser> arguments; 
 
@@ -219,12 +219,6 @@ public class ParameterizedType extends Type implements TWithParameterizedTypeUse
         return !getSuperInheritances().isEmpty();
     }
 
-    @FameProperty(name = "totalNumberOfSubclasses", derived = true)
-    public Number getTotalNumberOfSubclasses() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
 
 
 }

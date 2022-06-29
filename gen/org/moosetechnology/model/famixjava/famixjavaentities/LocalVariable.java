@@ -17,25 +17,21 @@ import org.moosetechnology.model.famixjava.famixtraits.TLocalVariable;
 import org.moosetechnology.model.famixjava.famixtraits.TNamedEntity;
 import org.moosetechnology.model.famixjava.famixtraits.TSourceAnchor;
 import org.moosetechnology.model.famixjava.famixtraits.TSourceEntity;
-import org.moosetechnology.model.famixjava.famixtraits.TSourceLanguage;
 import org.moosetechnology.model.famixjava.famixtraits.TStructuralEntity;
 import org.moosetechnology.model.famixjava.famixtraits.TType;
 import org.moosetechnology.model.famixjava.famixtraits.TTypedEntity;
 import org.moosetechnology.model.famixjava.famixtraits.TWithAccesses;
 import org.moosetechnology.model.famixjava.famixtraits.TWithComments;
 import org.moosetechnology.model.famixjava.famixtraits.TWithLocalVariables;
-import org.moosetechnology.model.famixjava.famixtraits.TWithSourceLanguage;
 import org.moosetechnology.model.famixjava.moosequery.TEntityMetaLevelDependency;
 
 
 @FamePackage("Famix-Java-Entities")
 @FameDescription("LocalVariable")
-public class LocalVariable extends NamedEntity implements TNamedEntity, TCanBeFinal, TSourceEntity, TEntityMetaLevelDependency, TLocalVariable, TInvocationsReceiver, TStructuralEntity, TWithSourceLanguage, TTypedEntity, TAccessible, TWithComments {
+public class LocalVariable extends NamedEntity implements TAccessible, TCanBeFinal, TEntityMetaLevelDependency, TInvocationsReceiver, TLocalVariable, TNamedEntity, TSourceEntity, TStructuralEntity, TTypedEntity, TWithComments {
 
     private Collection<TComment> comments; 
 
-    private TSourceLanguage declaredSourceLanguage;
-    
     private TType declaredType;
     
     private Collection<TAccess> incomingAccesses; 
@@ -117,21 +113,6 @@ public class LocalVariable extends NamedEntity implements TNamedEntity, TCanBeFi
     public Boolean getContainsReplicas() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "declaredSourceLanguage", opposite = "sourcedEntities")
-    public TSourceLanguage getDeclaredSourceLanguage() {
-        return declaredSourceLanguage;
-    }
-
-    public void setDeclaredSourceLanguage(TSourceLanguage declaredSourceLanguage) {
-        if (this.declaredSourceLanguage != null) {
-            if (this.declaredSourceLanguage.equals(declaredSourceLanguage)) return;
-            this.declaredSourceLanguage.getSourcedEntities().remove(this);
-        }
-        this.declaredSourceLanguage = declaredSourceLanguage;
-        if (declaredSourceLanguage == null) return;
-        declaredSourceLanguage.getSourcedEntities().add(this);
     }
     
     @FameProperty(name = "declaredType", opposite = "typedEntities")
@@ -293,8 +274,32 @@ public class LocalVariable extends NamedEntity implements TNamedEntity, TCanBeFi
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
     
+    @FameProperty(name = "numberOfExternalClients", derived = true)
+    public Number getNumberOfExternalClients() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
+    @FameProperty(name = "numberOfExternalProviders", derived = true)
+    public Number getNumberOfExternalProviders() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
     @FameProperty(name = "numberOfGlobalAccesses", derived = true)
     public Number getNumberOfGlobalAccesses() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
+    @FameProperty(name = "numberOfInternalClients", derived = true)
+    public Number getNumberOfInternalClients() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
+    @FameProperty(name = "numberOfInternalProviders", derived = true)
+    public Number getNumberOfInternalProviders() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
     }

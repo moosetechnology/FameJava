@@ -54,9 +54,6 @@ public interface TWithInheritances  {
     @FameProperty(name = "numberOfSubclasses", derived = true)
     public Number getNumberOfSubclasses();
 
-    @FameProperty(name = "totalNumberOfSubclasses", derived = true)
-    public Number getTotalNumberOfSubclasses();
-
     @FameProperty(name = "numberOfDirectSubclasses", derived = true)
     public Number getNumberOfDirectSubclasses();
 

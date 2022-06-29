@@ -7,13 +7,13 @@ import ch.akuhn.fame.FameProperty;
 
 
 @FamePackage("Famix-Traits")
-@FameDescription("THeader")
-public interface THeader  {
+@FameDescription("TCanBeClassSide")
+public interface TCanBeClassSide  {
 
-        @FameProperty(name = "headerOwner", opposite = "header")
-    public TWithHeaders getHeaderOwner();
+        @FameProperty(name = "isClassSide")
+    public Boolean getIsClassSide();
 
-    public void setHeaderOwner(TWithHeaders headerOwner);
+    public void setIsClassSide(Boolean isClassSide);
 
 
 

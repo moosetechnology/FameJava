@@ -3,15 +3,14 @@ package org.moosetechnology.model.famixjava.famixjavaentities;
 
 import ch.akuhn.fame.FameDescription;
 import ch.akuhn.fame.FamePackage;
+import org.moosetechnology.model.famixjava.famixtraits.TWithTypes;
 
 
 @FamePackage("Famix-Java-Entities")
-@FameDescription("Entity")
-public class Entity extends org.moosetechnology.model.famixjava.moose.Entity  {
+@FameDescription("TWithInterfaces")
+public interface TWithInterfaces  {
 
-
-
-
+    
 
 }
 

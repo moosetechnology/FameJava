@@ -19,7 +19,6 @@ import org.moosetechnology.model.famixjava.famixtraits.TReference;
 import org.moosetechnology.model.famixjava.famixtraits.TReferenceable;
 import org.moosetechnology.model.famixjava.famixtraits.TSourceAnchor;
 import org.moosetechnology.model.famixjava.famixtraits.TSourceEntity;
-import org.moosetechnology.model.famixjava.famixtraits.TSourceLanguage;
 import org.moosetechnology.model.famixjava.famixtraits.TType;
 import org.moosetechnology.model.famixjava.famixtraits.TTypedEntity;
 import org.moosetechnology.model.famixjava.famixtraits.TWithAttributes;
@@ -27,21 +26,18 @@ import org.moosetechnology.model.famixjava.famixtraits.TWithComments;
 import org.moosetechnology.model.famixjava.famixtraits.TWithEnumValues;
 import org.moosetechnology.model.famixjava.famixtraits.TWithInheritances;
 import org.moosetechnology.model.famixjava.famixtraits.TWithMethods;
-import org.moosetechnology.model.famixjava.famixtraits.TWithSourceLanguage;
 import org.moosetechnology.model.famixjava.famixtraits.TWithTypes;
 import org.moosetechnology.model.famixjava.moosequery.TEntityMetaLevelDependency;
 
 
 @FamePackage("Famix-Java-Entities")
 @FameDescription("Enum")
-public class Enum extends Type implements TSourceEntity, TReferenceable, TType, THasVisibility, TWithEnumValues, TNamedEntity, TWithAttributes, TWithMethods, TEnum, TEntityMetaLevelDependency, TWithInheritances, TWithSourceLanguage, TWithComments {
+public class Enum extends Type implements TEntityMetaLevelDependency, TEnum, THasVisibility, TNamedEntity, TReferenceable, TSourceEntity, TType, TWithAttributes, TWithComments, TWithEnumValues, TWithInheritances, TWithMethods {
 
     private Collection<TAttribute> attributes; 
 
     private Collection<TComment> comments; 
 
-    private TSourceLanguage declaredSourceLanguage;
-    
     private Collection<TEnumValue> enumValues; 
 
     private Collection<TReference> incomingReferences; 
@@ -174,21 +170,6 @@ public class Enum extends Type implements TSourceEntity, TReferenceable, TType, 
     public Boolean getContainsReplicas() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "declaredSourceLanguage", opposite = "sourcedEntities")
-    public TSourceLanguage getDeclaredSourceLanguage() {
-        return declaredSourceLanguage;
-    }
-
-    public void setDeclaredSourceLanguage(TSourceLanguage declaredSourceLanguage) {
-        if (this.declaredSourceLanguage != null) {
-            if (this.declaredSourceLanguage.equals(declaredSourceLanguage)) return;
-            this.declaredSourceLanguage.getSourcedEntities().remove(this);
-        }
-        this.declaredSourceLanguage = declaredSourceLanguage;
-        if (declaredSourceLanguage == null) return;
-        declaredSourceLanguage.getSourcedEntities().add(this);
     }
     
     @FameProperty(name = "duplicationRate", derived = true)
@@ -428,18 +409,6 @@ public class Enum extends Type implements TSourceEntity, TReferenceable, TType, 
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
     
-    @FameProperty(name = "numberOfAccessesToForeignData", derived = true)
-    public Number getNumberOfAccessesToForeignData() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfAccessorMethods", derived = true)
-    public Number getNumberOfAccessorMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
     @FameProperty(name = "numberOfAttributes", derived = true)
     public Number getNumberOfAttributes() {
         // TODO: this is a derived property, implement this method manually.
@@ -458,12 +427,6 @@ public class Enum extends Type implements TSourceEntity, TReferenceable, TType, 
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
     
-    @FameProperty(name = "numberOfConstructorMethods", derived = true)
-    public Number getNumberOfConstructorMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
     @FameProperty(name = "numberOfDeadChildren", derived = true)
     public Number getNumberOfDeadChildren() {
         // TODO: this is a derived property, implement this method manually.
@@ -476,8 +439,26 @@ public class Enum extends Type implements TSourceEntity, TReferenceable, TType, 
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
     
-    @FameProperty(name = "numberOfDuplicatedLinesOfCodeInternally", derived = true)
-    public Number getNumberOfDuplicatedLinesOfCodeInternally() {
+    @FameProperty(name = "numberOfExternalClients", derived = true)
+    public Number getNumberOfExternalClients() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
+    @FameProperty(name = "numberOfExternalProviders", derived = true)
+    public Number getNumberOfExternalProviders() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
+    @FameProperty(name = "numberOfInternalClients", derived = true)
+    public Number getNumberOfInternalClients() {
+        // TODO: this is a derived property, implement this method manually.
+        throw new UnsupportedOperationException("Not yet implemented!");  
+    }
+    
+    @FameProperty(name = "numberOfInternalProviders", derived = true)
+    public Number getNumberOfInternalProviders() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
@@ -505,24 +486,6 @@ public class Enum extends Type implements TSourceEntity, TReferenceable, TType, 
     
     @FameProperty(name = "numberOfMethods", derived = true)
     public Number getNumberOfMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfPrivateMethods", derived = true)
-    public Number getNumberOfPrivateMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfProtectedMethods", derived = true)
-    public Number getNumberOfProtectedMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfPublicMethods", derived = true)
-    public Number getNumberOfPublicMethods() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
@@ -669,12 +632,6 @@ public class Enum extends Type implements TSourceEntity, TReferenceable, TType, 
 
     @FameProperty(name = "tightClassCohesion", derived = true)
     public Number getTightClassCohesion() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "totalNumberOfSubclasses", derived = true)
-    public Number getTotalNumberOfSubclasses() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
     }

@@ -12,12 +12,7 @@ import org.moosetechnology.model.famixjava.moosequery.TEntityMetaLevelDependency
 @FameDescription("TPackage")
 public interface TPackage  {
 
-        @FameProperty(name = "packageOwner", opposite = "packages")
-    public TWithPackages getPackageOwner();
-
-    public void setPackageOwner(TWithPackages packageOwner);
-
-    @FameProperty(name = "weightedMethodCount", derived = true)
+        @FameProperty(name = "weightedMethodCount", derived = true)
     public Number getWeightedMethodCount();
 
     @FameProperty(name = "childEntities", opposite = "parentPackage", derived = true)

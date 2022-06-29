@@ -31,11 +31,11 @@ public interface TEntityMetaLevelDependency  {
     @FameProperty(name = "numberOfInternalClients", derived = true)
     public Number getNumberOfInternalClients();
 
-    @FameProperty(name = "isDead", derived = true)
-    public Boolean getIsDead();
-
     @FameProperty(name = "numberOfExternalClients", derived = true)
     public Number getNumberOfExternalClients();
+
+    @FameProperty(name = "isDead", derived = true)
+    public Boolean getIsDead();
 
 
 

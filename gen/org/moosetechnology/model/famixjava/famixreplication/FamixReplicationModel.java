@@ -12,8 +12,8 @@ public class FamixReplicationModel {
     }
     
     public static void importInto(MetaRepository metamodel) {
-		metamodel.with(org.moosetechnology.model.famixjava.famixreplication.Replica.class);
 		metamodel.with(org.moosetechnology.model.famixjava.famixreplication.ReplicatedFragment.class);
+		metamodel.with(org.moosetechnology.model.famixjava.famixreplication.Replica.class);
 
     }
 

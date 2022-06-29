@@ -44,7 +44,7 @@ import org.moosetechnology.model.famixjava.moosequery.TOODependencyQueries;
 
 @FamePackage("Famix-Java-Entities")
 @FameDescription("Class")
-public class Class extends Type implements TCanBeAbstract, TCanBeClassSide, TCanBeFinal, TCanImplement, TClass, TEntityMetaLevelDependency, THasVisibility, TInvocationsReceiver, TLCOMMetrics, TNamedEntity, TOODependencyQueries, TPackageable, TReferenceable, TSourceEntity, TType, TWithAttributes, TWithComments, TWithExceptions, TWithInheritances, TWithMethods, org.moosetechnology.model.famixjava.famixjavaentities.TClassMetrics, org.moosetechnology.model.famixjava.famixtraits.TClassMetrics {
+public class Class extends Type implements TCanBeAbstract, TCanBeClassSide, TCanBeFinal, TCanImplement, TClass, TClassMetrics, TEntityMetaLevelDependency, THasVisibility, TInvocationsReceiver, TLCOMMetrics, TNamedEntity, TOODependencyQueries, TPackageable, TReferenceable, TSourceEntity, TType, TWithAttributes, TWithComments, TWithExceptions, TWithInheritances, TWithMethods {
 
     private Boolean isInterface;
     
@@ -546,12 +546,6 @@ public class Class extends Type implements TCanBeAbstract, TCanBeClassSide, TCan
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
     
-    @FameProperty(name = "numberOfAccessorMethods", derived = true)
-    public Number getNumberOfAccessorMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
     @FameProperty(name = "numberOfAttributes", derived = true)
     public Number getNumberOfAttributes() {
         // TODO: this is a derived property, implement this method manually.
@@ -572,12 +566,6 @@ public class Class extends Type implements TCanBeAbstract, TCanBeClassSide, TCan
     
     @FameProperty(name = "numberOfComments", derived = true)
     public Number getNumberOfComments() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfConstructorMethods", derived = true)
-    public Number getNumberOfConstructorMethods() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
     }
@@ -665,24 +653,6 @@ public class Class extends Type implements TCanBeAbstract, TCanBeClassSide, TCan
     
     @FameProperty(name = "numberOfMethodsOverriden", derived = true)
     public Number getNumberOfMethodsOverriden() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfPrivateMethods", derived = true)
-    public Number getNumberOfPrivateMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfProtectedMethods", derived = true)
-    public Number getNumberOfProtectedMethods() {
-        // TODO: this is a derived property, implement this method manually.
-        throw new UnsupportedOperationException("Not yet implemented!");  
-    }
-    
-    @FameProperty(name = "numberOfPublicMethods", derived = true)
-    public Number getNumberOfPublicMethods() {
         // TODO: this is a derived property, implement this method manually.
         throw new UnsupportedOperationException("Not yet implemented!");  
     }

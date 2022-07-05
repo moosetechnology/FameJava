@@ -400,7 +400,8 @@ public class CodeGeneration {
         template.set("AUTOGENCODE", "Automagically generated code");
 
         StringBuilder builder = new StringBuilder();
-        for (FM3Type meta : m.getClasses()) {
+        List<FM3Type> types = m.getClasses().stream().sorted((o1,o2) -> o1.getName().compareTo(o2.getName())).collect(Collectors.toList());
+        for (FM3Type meta : types ) {
             if (!meta.getName().equals(name)) {
                 builder.append("\t\tmetamodel.with(");
                 builder.append(packageName);

@@ -12,11 +12,11 @@ import org.moosetechnology.model.famixjava.moosequery.TOODependencyQueries;
 @FameDescription("TMethod")
 public interface TMethod  {
 
-        @FameProperty(name = "numberOfMessageSends", derived = true)
-    public Number getNumberOfMessageSends();
-
-    @FameProperty(name = "hasClassScope", derived = true)
+        @FameProperty(name = "hasClassScope", derived = true)
     public Boolean getHasClassScope();
+
+    @FameProperty(name = "numberOfMessageSends", derived = true)
+    public Number getNumberOfMessageSends();
 
     @FameProperty(name = "parentType", opposite = "methods", container = true)
     public TWithMethods getParentType();

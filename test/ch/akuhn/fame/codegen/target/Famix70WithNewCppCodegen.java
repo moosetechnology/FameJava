@@ -29,13 +29,12 @@ import ch.akuhn.fame.parser.InputSource;
 
 import static ch.akuhn.util.Out.puts;
 
-public class Famix70Codegen {
-	public Famix70Codegen() {
-		
-	}
-	
+public class Famix70WithNewCppCodegen {
+
+	public Famix70WithNewCppCodegen() { }
+
     public static void main(String... args) {
-        InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX70.mse");
+        InputSource input = InputSource.fromResource("ch/unibe/fame/resources/famix70WithNewCpp.mse");
         MetaRepository fm3 = MetaRepository.createFM3();
         Importer builder = new Importer(fm3);
         builder.readFrom(input);

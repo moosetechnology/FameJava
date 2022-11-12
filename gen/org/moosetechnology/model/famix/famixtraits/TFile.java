@@ -9,7 +9,7 @@ import java.util.*;
 
 @FamePackage("Famix-Traits")
 @FameDescription("TFile")
-public interface TFile  {
+public interface TFile extends TFileSystemEntity {
 
         @FameProperty(name = "averageNumberOfCharactersPerLine", derived = true)
     public Number getAverageNumberOfCharactersPerLine();

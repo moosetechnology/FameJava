@@ -9,7 +9,7 @@ import org.moosetechnology.model.famix.moosequery.TAssociationMetaLevelDependenc
 
 @FamePackage("Famix-Traits")
 @FameDescription("TAccess")
-public interface TAccess  {
+public interface TAccess extends TAssociationMetaLevelDependency, TAssociation, TSourceEntity {
 
         @FameProperty(name = "isRead", derived = true)
     public Boolean getIsRead();

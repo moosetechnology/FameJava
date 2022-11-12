@@ -8,7 +8,7 @@ import ch.akuhn.fame.FameProperty;
 
 @FamePackage("Famix-Traits")
 @FameDescription("TRelativeSourceAnchor")
-public interface TRelativeSourceAnchor  {
+public interface TRelativeSourceAnchor extends TSourceAnchor {
 
         @FameProperty(name = "startPos")
     public Number getStartPos();

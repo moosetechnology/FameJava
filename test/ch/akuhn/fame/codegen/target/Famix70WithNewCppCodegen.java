@@ -41,7 +41,7 @@ public class Famix70WithNewCppCodegen {
         Repository famix = builder.getResult();
         CodeGeneration gen = new CodeGeneration("org.moosetechnology.model.famix", "gen", "");
         gen.accept(famix);
-        puts("done");
+        puts("Famix70WithNewCppCodegen done");
     }
 
 }

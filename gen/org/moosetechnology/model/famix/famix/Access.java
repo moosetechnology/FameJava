@@ -43,6 +43,13 @@ public class Access extends Entity implements TAccess, TAssociation, TAssociatio
     private TAccessible variable;
     
 
+	@Override
+	public void setIsWrite(Boolean isWrite) {
+		// TODO Auto-generated method stub
+		
+	}
+    
+
 
     @FameProperty(name = "accessor", opposite = "accesses")
     public TWithAccesses getAccessor() {
@@ -259,7 +266,6 @@ public class Access extends Entity implements TAccess, TAssociation, TAssociatio
         if (variable == null) return;
         variable.getIncomingAccesses().add(this);
     }
-    
 
 
 }

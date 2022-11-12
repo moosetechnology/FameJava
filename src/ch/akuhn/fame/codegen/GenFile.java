@@ -1,7 +1,5 @@
 package ch.akuhn.fame.codegen;
 
-import ch.akuhn.foreach.Collect;
-
 import java.io.IOException;
 import java.util.Collection;
 import java.util.TreeSet;

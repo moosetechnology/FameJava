@@ -26,6 +26,13 @@ public class InterfaceFile extends GenFile {
         super(myPackage, name);
     }
 
+    @Override
+    public String getTraits() {
+        if (traits.isEmpty())
+            return "";
+        return "extends " + String.join(", ", traits);
+    }
+
     public void generateCode(Appendable stream) throws IOException {
         Template template = Template.get("Interface");
         template.set("PACKAGE", myPackage);
@@ -33,8 +40,7 @@ public class InterfaceFile extends GenFile {
         template.set("THISTYPE", name);
         template.set("THISPACKAGE", modelPackagename);
         template.set("THISNAME", modelClassname);
-        template
-                .set("IMPLEMENTS", superName == null ? "" : "extends " + superName);
+        template.set("IMPLEMENTS", getTraits());
         template.set("IMPORTS", getImports());
         template.set("FIELDS", getFieldsContentStream().toString());
         template.set("METHODS", getBodyContentStream().toString());

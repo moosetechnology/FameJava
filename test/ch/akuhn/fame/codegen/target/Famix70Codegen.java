@@ -30,7 +30,10 @@ import ch.akuhn.fame.parser.InputSource;
 import static ch.akuhn.util.Out.puts;
 
 public class Famix70Codegen {
-
+	public Famix70Codegen() {
+		
+	}
+	
     public static void main(String... args) {
         InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX70.mse");
         MetaRepository fm3 = MetaRepository.createFM3();

@@ -1,6 +1,5 @@
 # Fame-Java
 
-[![Use Java 10](https://img.shields.io/badge/Java-10-brightgreen)](https://jdk.java.net/10/)
 
 Fame is a concise meta-meta-model. This is a fork of the original Fame meta-meta-model implementation by Adrian Kuhn and Toon Verwaest.
 
@@ -10,14 +9,16 @@ This is an implementation of Fame in Java that supports traits concept that is u
 
 ## User
 
-To generate the java code from a *.mse* file please:
+To generate the java classes of a [Moose](https:modularmoose.org) meta-model:
 
-1. add the *.mse* file under the "samples/ch/unibe/fame/resources" folder.
-2. under `test.ch.akuhn.fame.codegen.target` create a new "target" following the template of other Codegen class
-3. execute the test to generate the code under the folder gen
+1. generate (in Pharo) a `.mse` file describing the meta-model.
+1. add the `.mse` file under the "samples/ch/unibe/fame/resources" folder.
+1. under "test.ch.akuhn.fame.codegen.target" create a new "target" following the template of other Codegen class.
+1. execute the "target" to generate the code under the folder `gen`.
 
-## Developer
+The `.mse` file may be generated in Pharo from the meta model with this command:
 
-To make it work with [VerveineJ](https://github.com/moosetechnology/VerveineJ), you **must** compile with Java 10!
+`'some-file-name.mse' asFileReference writeStreamDo: [:stream | MooseModel metamodel exportOn: stream]`
+
 
 ## License: GNU LESSER GENERAL PUBLIC LICENSE

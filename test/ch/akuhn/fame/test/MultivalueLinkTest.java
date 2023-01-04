@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ch.akuhn.fame.codegen.target.DungeonCodegen;
 import ch.akuhn.fame.test.DungeonExample.Dragon;
 import ch.akuhn.fame.test.DungeonExample.Hero;
 import ch.akuhn.fame.test.DungeonExample.Treasure;
+import metamodel.codegen.DungeonCodegen;
 
 public class MultivalueLinkTest {
 

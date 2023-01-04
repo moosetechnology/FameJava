@@ -10,13 +10,9 @@ This is an implementation of Fame in Java that supports traits concept used in t
 To generate the java classes of a [Moose](https:modularmoose.org) meta-model:
 
 1. generate (in Pharo) a `.mse` file describing the meta-model.
-1. add the `.mse` file under the "samples/ch/unibe/fame/resources" folder.
-1. under "test.ch.akuhn.fame.codegen.target" create a new "target" following the template of other Codegen class.
-1. execute the "target" to generate the code under the folder `gen`.
-
-The `.mse` file may be generated in Pharo from the meta model with this command:
-
-`'some-file-name.mse' asFileReference writeStreamDo: [:stream | MooseModel metamodel exportOn: stream]`
-
+   command: `'some-file-name.mse' asFileReference writeStreamDo: [:stream | MooseModel metamodel exportOn: stream]`
+3. add the `.mse` file under the "resources" folder.
+4. under "src/metamodel.codegen" create a new "target" following the template of other Codegen class.
+5. execute the "target" to generate the code under the folder `gen`.
 
 ## License: GNU LESSER GENERAL PUBLIC LICENSE

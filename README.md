@@ -3,9 +3,7 @@
 
 Fame is a concise meta-meta-model. This is a fork of the original Fame meta-meta-model implementation by Adrian Kuhn and Toon Verwaest.
 
-## Description
-
-This is an implementation of Fame in Java that supports traits concept that is used in the last Fama for Moose version
+This is an implementation of Fame in Java that supports traits concept used in the last Famix
 
 ## User
 

@@ -19,13 +19,13 @@
 package ch.akuhn.fame.internal;
 
 import java.util.AbstractSet;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 public abstract class MultivalueSet<T> extends AbstractSet<T> {
 
-    private Set<T> values = new HashSet<T>();
+    private Set<T> values = new LinkedHashSet<T>();
 
     @Override
     public boolean add(T e) {

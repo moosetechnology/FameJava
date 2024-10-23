@@ -9,9 +9,12 @@ import ch.akuhn.fame.FameDescription;
 import ch.akuhn.fame.FameProperty;
 import ch.akuhn.fame.Tower;
 import ch.unibe.jexample.Given;
+import ch.unibe.jexample.Injection;
+import ch.unibe.jexample.InjectionPolicy;
 import ch.unibe.jexample.JExample;
 
-@RunWith( JExample.class) 
+@RunWith( JExample.class)
+@Injection(InjectionPolicy.NONE)
 public class PolymorphismTest {
 
     @FameDescription

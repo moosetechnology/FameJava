@@ -13,11 +13,14 @@ import ch.akuhn.fame.Tower;
 import ch.akuhn.fame.fm3.MetaDescription;
 import ch.akuhn.fame.fm3.PropertyDescription;
 import ch.unibe.jexample.Given;
+import ch.unibe.jexample.Injection;
+import ch.unibe.jexample.InjectionPolicy;
 import ch.unibe.jexample.JExample;
 
 
 @FamePackage("Test")
 @RunWith(JExample.class)
+@Injection(InjectionPolicy.NONE)
 public class ArrayFieldTest {
 
     @FameDescription

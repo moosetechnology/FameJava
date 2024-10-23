@@ -16,9 +16,12 @@ import ch.akuhn.fame.Tower;
 import ch.akuhn.util.Bag;
 import ch.akuhn.util.Strings;
 import ch.unibe.jexample.Given;
+import ch.unibe.jexample.Injection;
+import ch.unibe.jexample.InjectionPolicy;
 import ch.unibe.jexample.JExample;
 
 @RunWith(JExample.class)
+@Injection(InjectionPolicy.NONE)
 public class TermBagExample {
 
     private static final String EMPTY_DOCUMENT = 

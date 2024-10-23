@@ -35,8 +35,8 @@ public class MetaDescriptionTest {
     public void testAllAttributes() {
         String str = "((FM3.Package (name 'World')"
                 + "(classes "
-                + "     (FM3.Class (id: 1) (name 'Super') (attributes (FM3.Property (name 'foo')))) "
-                + "     (FM3.Class (name 'Sub') (superclass (ref: 1)) (attributes (FM3.Property (name 'foo'))))"
+                + "     (FM3.Class (id: 1) (name 'Super') (properties (FM3.Property (name 'foo')))) "
+                + "     (FM3.Class (name 'Sub') (superclass (ref: 1)) (properties (FM3.Property (name 'foo'))))"
                 + ")))";
         Tower t = new Tower();
         t.getMetamodel().importMSE(str);

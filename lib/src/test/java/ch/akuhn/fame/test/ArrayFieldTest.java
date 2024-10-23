@@ -56,8 +56,10 @@ public class ArrayFieldTest {
     }
 
     @Test
-    @Given("#metamodel,#exportModel")
-    public void importModel(Tower t, String mse) {
+    @Given("#exportModel")
+    public void importModel(String mse) {
+        Tower t = new Tower();
+        t.metamodel.with(Dummy.class);
         assertEquals(0, t.model.size());
         t.model.importMSE(mse);
         assertEquals(1, t.model.size());

@@ -5,7 +5,7 @@
 			(MSE.Class (id: 14)
 				(name 'Element')
 				(superclass (ref: Object))
-				(attributes
+				(properties
 					(MSE.Property (id: 7)
 						(name 'name')
 						(type (ref: String)))
@@ -18,7 +18,7 @@
 			(MSE.Class (id: 15)
 				(name 'Property')
 				(superclass (idref: 14))
-				(attributes
+				(properties
 					(MSE.Property (id: 3)
 						(name 'opposite')
 						(opposite (idref: 3))
@@ -45,7 +45,7 @@
 			(MSE.Class (id: 25)
 				(name 'Package')
 				(superclass (idref: 14))
-				(attributes
+				(properties
 					(MSE.Property (id: 24)
 						(name 'classes')
 						(opposite (idref: 23))
@@ -53,7 +53,7 @@
 			(MSE.Class (id: 2)
 				(name 'Class')
 				(superclass (idref: 14))
-				(attributes
+				(properties
 					(MSE.Property (id: 16)
 						(name 'abstract')
 						(type (ref: Boolean)))

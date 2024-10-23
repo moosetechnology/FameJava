@@ -11,7 +11,7 @@
 			(FM3.Class (id: 19)
 				(name 'Class')
 				(superclass (idref: 8))
-				(attributes
+				(properties
 					(FM3.Property (id: 23)
 						(name 'abstract')
 						(type (ref: Boolean)))
@@ -39,7 +39,7 @@
 			(FM3.Class (id: 7)
 				(name 'Package')
 				(superclass (ref: 8))
-				(attributes
+				(properties
 					(FM3.Property (id: 9)
 						(name 'classes')
 						(multivalued true)
@@ -54,7 +54,7 @@
 				(name 'Element')
 				(abstract true)
 				(superclass (ref: Object))
-				(attributes
+				(properties
 					(FM3.Property (id: 5)
 						(name 'name')
 						(type (ref: String)))
@@ -69,7 +69,7 @@
 			(FM3.Class (id: 20)
 				(name 'Property')
 				(superclass (ref: 8))
-				(attributes
+				(properties
 					(FM3.Property (id: 12)
 						(name 'opposite')
 						(opposite (ref: 12))

@@ -6,7 +6,7 @@
 				(name 'Type')
 				(abstract true)
 				(superclass (ref: 25))
-				(attributes
+				(properties
 					(FM3.Property (id: 29)
 						(name 'package')
 						(opposite (ref: 41))
@@ -15,7 +15,7 @@
 				(name 'NamedElement')
 				(abstract true)
 				(superclass (ref: 2))
-				(attributes
+				(properties
 					(FM3.Property (id: 6)
 						(name 'fullQualifiedName')
 						(derived true)
@@ -27,7 +27,7 @@
 				(name 'Element')
 				(abstract true)
 				(superclass (ref: Object))
-				(attributes
+				(properties
 					(FM3.Property (id: 24)
 						(name 'ownedElements')
 						(derived true)
@@ -46,7 +46,7 @@
 			(FM3.Class (id: 31)
 				(name 'PrimitiveType')
 				(superclass (ref: 1))
-				(attributes
+				(properties
 					(FM3.Property (id: 21)
 						(name 'decodeExpression')
 						(type (ref: String)))
@@ -60,7 +60,7 @@
 			(FM3.Class (id: 19)
 				(name 'Class')
 				(superclass (ref: 1))
-				(attributes
+				(properties
 					(FM3.Property (id: 27)
 						(name 'ownedOperation')
 						(multivalued true)
@@ -82,7 +82,7 @@
 				(name 'TypedElement')
 				(abstract true)
 				(superclass (ref: 25))
-				(attributes
+				(properties
 					(FM3.Property (id: 26)
 						(name 'upper')
 						(type (ref: Number)))
@@ -101,7 +101,7 @@
 			(FM3.Class (id: 9)
 				(name 'Package')
 				(superclass (ref: 25))
-				(attributes
+				(properties
 					(FM3.Property (id: 23)
 						(name 'nestingPackage')
 						(opposite (ref: 39))
@@ -119,7 +119,7 @@
 			(FM3.Class (id: 11)
 				(name 'Operation')
 				(superclass (ref: 32))
-				(attributes
+				(properties
 					(FM3.Property (id: 7)
 						(name 'class')
 						(opposite (ref: 27))
@@ -127,7 +127,7 @@
 			(FM3.Class (id: 36)
 				(name 'Property')
 				(superclass (ref: 32))
-				(attributes
+				(properties
 					(FM3.Property (id: 12)
 						(name 'default')
 						(type (ref: Object)))

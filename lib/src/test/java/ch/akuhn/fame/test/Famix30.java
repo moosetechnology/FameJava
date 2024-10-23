@@ -44,7 +44,7 @@ public class Famix30 {
 
     @Test
     public void checkConstraints() {
-        InputSource input = InputSource.fromResource("ch/unibe/fame/resources//FAMIX30.fm3.mse");
+        InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX30.fm3.mse");
         Tower t = new Tower();
         t.getMetamodel().importMSE(input);
         t.getMetamodel().checkConstraints().printOn(System.out);
@@ -52,7 +52,7 @@ public class Famix30 {
 
     @Test
     public void testImporter() {
-        InputSource input = InputSource.fromResource("ch/unibe/fame/resources//FAMIX30.fm3.mse");
+        InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX30.fm3.mse");
         Tower t = new Tower();
         t.getMetamodel().importMSE(input);
         Repository m2 = t.getMetamodel();

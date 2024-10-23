@@ -11,7 +11,7 @@
 			(MSE.Class (id: 479)
 				(name 'ClassVersion')
 				(superclass (idref: 248))
-				(attributes
+				(properties
 					(MSE.Property (id: 155)
 						(name 'VA_NOM')
 						(type (ref: Number)))
@@ -27,7 +27,7 @@
 			(MSE.Class (id: 219)
 				(name 'MethodVersion')
 				(superclass (idref: 248))
-				(attributes
+				(properties
 					(MSE.Property (id: 3)
 						(name 'VE_NOS')
 						(type (ref: Number)))
@@ -54,7 +54,7 @@
 			(MSE.Class (id: 445)
 				(name 'AbstractGroup')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 245)
 						(name 'numberOfItems')
 						(type (ref: Number)))
@@ -67,7 +67,7 @@
 			(MSE.Class (id: 288)
 				(name 'Model')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 136)
 						(name 'sourceLanguage')
 						(type (ref: String)))
@@ -94,14 +94,14 @@
 			(MSE.Class (id: 289)
 				(name 'NamespaceHistory')
 				(superclass (idref: 502))
-				(attributes
+				(properties
 					(MSE.Property (id: 520)
 						(name 'E_NOCls')
 						(type (ref: Number)))))
 			(MSE.Class (id: 187)
 				(name 'NamespaceVersion')
 				(superclass (idref: 248))
-				(attributes
+				(properties
 					(MSE.Property (id: 358)
 						(name 'VA_NOM')
 						(type (ref: Number)))
@@ -126,7 +126,7 @@
 			(MSE.Class (id: 458)
 				(name 'ClassGroup')
 				(superclass (idref: 50))
-				(attributes
+				(properties
 					(MSE.Property (id: 154)
 						(name 'A_NOA')
 						(type (ref: Number)))
@@ -160,7 +160,7 @@
 			(MSE.Class (id: 522)
 				(name 'ClassHistory')
 				(superclass (idref: 502))
-				(attributes
+				(properties
 					(MSE.Property (id: 18)
 						(name 'Last_NOM')
 						(type (ref: Number)))
@@ -215,7 +215,7 @@
 			(MSE.Class (id: 468)
 				(name 'AbstractEntity')
 				(superclass (idref: 149))
-				(attributes
+				(properties
 					(MSE.Property (id: 393)
 						(name 'mooseModel')
 						(opposite (idref: 488))
@@ -232,14 +232,14 @@
 			(MSE.Class (id: 502)
 				(name 'AbstractHistory')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 326)
 						(name 'AGE')
 						(type (ref: Number)))))
 			(MSE.Class (id: 212)
 				(name 'MethodGroup')
 				(superclass (idref: 50))
-				(attributes
+				(properties
 					(MSE.Property (id: 222)
 						(name 'A_NOP')
 						(type (ref: Number)))
@@ -279,7 +279,7 @@
 			(MSE.Class (id: 180)
 				(name 'AbstractEvent')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 317)
 						(name 'child')
 						(opposite (idref: 234))
@@ -303,14 +303,14 @@
 			(MSE.Class (id: 181)
 				(name 'Return')
 				(superclass (idref: 180))
-				(attributes
+				(properties
 					(MSE.Property (id: 292)
 						(name 'instanceId')
 						(type (ref: String)))))
 			(MSE.Class (id: 168)
 				(name 'Alias')
 				(superclass (idref: 451))
-				(attributes
+				(properties
 					(MSE.Property (id: 440)
 						(name 'timestamp')
 						(type (ref: Number)))
@@ -337,7 +337,7 @@
 			(MSE.Class (id: 499)
 				(name 'TraceMethodAssociation')
 				(superclass (idref: 371))
-				(attributes
+				(properties
 					(MSE.Property (id: 339)
 						(name 'NORM')
 						(type (ref: Number)))
@@ -359,7 +359,7 @@
 			(MSE.Class (id: 127)
 				(name 'Trace')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 430)
 						(name 'NOMIf')
 						(type (ref: Number)))
@@ -421,7 +421,7 @@
 			(MSE.Class (id: 206)
 				(name 'TraceClassAssociation')
 				(superclass (idref: 371))
-				(attributes
+				(properties
 					(MSE.Property (id: 77)
 						(name 'Dedication')
 						(type (ref: Number)))
@@ -449,14 +449,14 @@
 			(MSE.Class (id: 27)
 				(name 'TracePackageAssociation')
 				(superclass (idref: 371))
-				(attributes
+				(properties
 					(MSE.Property (id: 5)
 						(name 'tracepackageassociation')
 						(type (idref: 27)))))
 			(MSE.Class (id: 371)
 				(name 'TraceEntityAssociation')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 304)
 						(name 'aRel')
 						(type (ref: Number)))
@@ -472,7 +472,7 @@
 			(MSE.Class (id: 432)
 				(name 'HistoricalAlias')
 				(superclass (idref: 168))
-				(attributes
+				(properties
 					(MSE.Property (id: 148)
 						(name 'predecessor')
 						(opposite (idref: 56))
@@ -484,7 +484,7 @@
 			(MSE.Class (id: 451)
 				(name 'Reference')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 404)
 						(name 'NORM')
 						(type (ref: Number)))
@@ -498,7 +498,7 @@
 			(MSE.Class (id: 246)
 				(name 'Instance')
 				(superclass (idref: 451))
-				(attributes
+				(properties
 					(MSE.Property (id: 176)
 						(name 'alias')
 						(opposite (idref: 274))
@@ -519,7 +519,7 @@
 			(MSE.Class (id: 337)
 				(name 'Activation')
 				(superclass (idref: 180))
-				(attributes
+				(properties
 					(MSE.Property (id: 6)
 						(name 'argument')
 						(opposite (idref: 473))
@@ -554,7 +554,7 @@
 			(MSE.Class (id: 251)
 				(name 'Attribute')
 				(superclass (idref: 30))
-				(attributes
+				(properties
 					(MSE.Property (id: 315)
 						(name 'accessControlQualifier')
 						(type (ref: String)))
@@ -586,7 +586,7 @@
 			(MSE.Class (id: 147)
 				(name 'Access')
 				(superclass (idref: 182))
-				(attributes
+				(properties
 					(MSE.Property (id: 334)
 						(name 'accesses')
 						(type (idref: 421)))
@@ -600,7 +600,7 @@
 			(MSE.Class (id: 146)
 				(name 'AbstractNamedEntity')
 				(superclass (idref: 421))
-				(attributes
+				(properties
 					(MSE.Property (id: 123)
 						(name 'NL')
 						(type (ref: Number)))
@@ -613,7 +613,7 @@
 			(MSE.Class (id: 383)
 				(name 'InheritanceDefinition')
 				(superclass (idref: 182))
-				(attributes
+				(properties
 					(MSE.Property (id: 151)
 						(name 'accessControlQualifier')
 						(type (ref: String)))
@@ -631,14 +631,14 @@
 			(MSE.Class (id: 105)
 				(name 'AbstractScopable')
 				(superclass (idref: 146))
-				(attributes
+				(properties
 					(MSE.Property (id: 398)
 						(name 'belongsTo')
 						(type (idref: 395)))))
 			(MSE.Class (id: 256)
 				(name 'Invocation')
 				(superclass (idref: 182))
-				(attributes
+				(properties
 					(MSE.Property (id: 434)
 						(name 'receivingVariable')
 						(type (idref: 421)))
@@ -659,7 +659,7 @@
 			(MSE.Class (id: 443)
 				(name 'Class')
 				(superclass (idref: 105))
-				(attributes
+				(properties
 					(MSE.Property (id: 356)
 						(name 'PubM')
 						(type (ref: Number)))
@@ -812,7 +812,7 @@
 			(MSE.Class (id: 411)
 				(name 'FormalParameter')
 				(superclass (idref: 276))
-				(attributes
+				(properties
 					(MSE.Property (id: 441)
 						(name 'position')
 						(type (ref: Number)))))
@@ -822,21 +822,21 @@
 			(MSE.Class (id: 447)
 				(name 'GlobalVariable')
 				(superclass (idref: 30))
-				(attributes
+				(properties
 					(MSE.Property (id: 343)
 						(name 'belongsTo')
 						(type (idref: 395)))))
 			(MSE.Class (id: 290)
 				(name 'UnknownVariable')
 				(superclass (idref: 30))
-				(attributes
+				(properties
 					(MSE.Property (id: 47)
 						(name 'usedInContext')
 						(type (idref: 90)))))
 			(MSE.Class (id: 10)
 				(name 'Include')
 				(superclass (idref: 182))
-				(attributes
+				(properties
 					(MSE.Property (id: 457)
 						(name 'includingFile')
 						(type (idref: 500)))
@@ -846,7 +846,7 @@
 			(MSE.Class (id: 194)
 				(name 'Literal')
 				(superclass (idref: 421))
-				(attributes
+				(properties
 					(MSE.Property (id: 229)
 						(name 'content')
 						(type (ref: String)))
@@ -862,14 +862,14 @@
 			(MSE.Class (id: 197)
 				(name 'ModelRoot')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 365)
 						(name 'stub')
 						(type (ref: Boolean)))))
 			(MSE.Class (id: 157)
 				(name 'Comment')
 				(superclass (idref: 421))
-				(attributes
+				(properties
 					(MSE.Property (id: 384)
 						(name 'content')
 						(type (ref: String)))
@@ -879,14 +879,14 @@
 			(MSE.Class (id: 421)
 				(name 'AbstractObject')
 				(superclass (idref: 197))
-				(attributes
+				(properties
 					(MSE.Property (id: 57)
 						(name 'sourceAnchor')
 						(type (ref: String)))))
 			(MSE.Class (id: 20)
 				(name 'JSPInvocation')
 				(superclass (idref: 182))
-				(attributes
+				(properties
 					(MSE.Property (id: 8)
 						(name 'candidate')
 						(opposite (idref: 385))
@@ -901,7 +901,7 @@
 			(MSE.Class (id: 266)
 				(name 'Package')
 				(superclass (idref: 146))
-				(attributes
+				(properties
 					(MSE.Property (id: 493)
 						(name 'TLOC')
 						(type (ref: Number)))
@@ -921,7 +921,7 @@
 			(MSE.Class (id: 466)
 				(name 'Folder')
 				(superclass (idref: 501))
-				(attributes
+				(properties
 					(MSE.Property (id: 255)
 						(name 'folder')
 						(opposite (idref: 345))
@@ -940,7 +940,7 @@
 			(MSE.Class (id: 205)
 				(name 'JSPPage')
 				(superclass (idref: 146))
-				(attributes
+				(properties
 					(MSE.Property (id: 471)
 						(name 'filedIn')
 						(type (ref: String)))
@@ -954,7 +954,7 @@
 			(MSE.Class (id: 361)
 				(name 'AbstractArgument')
 				(superclass (idref: 421))
-				(attributes
+				(properties
 					(MSE.Property (id: 41)
 						(name 'position')
 						(type (ref: Number)))
@@ -964,7 +964,7 @@
 			(MSE.Class (id: 169)
 				(name 'JSPAttribute')
 				(superclass (idref: 146))
-				(attributes
+				(properties
 					(MSE.Property (id: 374)
 						(name 'declaredType')
 						(type (idref: 443)))
@@ -980,7 +980,7 @@
 			(MSE.Class (id: 90)
 				(name 'AbstractBehaviouralEntity')
 				(superclass (idref: 146))
-				(attributes
+				(properties
 					(MSE.Property (id: 68)
 						(name 'outgoingInvocation')
 						(opposite (idref: 217))
@@ -1051,7 +1051,7 @@
 			(MSE.Class (id: 500)
 				(name 'File')
 				(superclass (idref: 501))
-				(attributes
+				(properties
 					(MSE.Property (id: 417)
 						(name 'TLOT')
 						(type (ref: Number)))
@@ -1098,7 +1098,7 @@
 			(MSE.Class (id: 395)
 				(name 'Namespace')
 				(superclass (idref: 105))
-				(attributes
+				(properties
 					(MSE.Property (id: 130)
 						(name 'NOA')
 						(type (ref: Number)))
@@ -1154,7 +1154,7 @@
 			(MSE.Class (id: 366)
 				(name 'ImplicitVariable')
 				(superclass (idref: 30))
-				(attributes
+				(properties
 					(MSE.Property (id: 88)
 						(name 'belongsTo')
 						(type (idref: 443)))))
@@ -1164,7 +1164,7 @@
 			(MSE.Class (id: 28)
 				(name 'Function')
 				(superclass (idref: 90))
-				(attributes
+				(properties
 					(MSE.Property (id: 455)
 						(name 'belongsTo')
 						(opposite (idref: 438))
@@ -1172,7 +1172,7 @@
 			(MSE.Class (id: 30)
 				(name 'AbstractStructuralEntity')
 				(superclass (idref: 146))
-				(attributes
+				(properties
 					(MSE.Property (id: 76)
 						(name 'hostedAlias')
 						(type (idref: 168)))
@@ -1192,7 +1192,7 @@
 			(MSE.Class (id: 310)
 				(name 'Method')
 				(superclass (idref: 90))
-				(attributes
+				(properties
 					(MSE.Property (id: 109)
 						(name 'NIJSPI')
 						(type (ref: Number)))
@@ -1264,7 +1264,7 @@
 			(MSE.Class (id: 276)
 				(name 'AbstractLocalEntity')
 				(superclass (idref: 30))
-				(attributes
+				(properties
 					(MSE.Property (id: 415)
 						(name 'belongsTo')
 						(type (idref: 90)))))))
@@ -1306,14 +1306,14 @@
 			(MSE.Class (id: 74)
 				(name 'Detector')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 224)
 						(name 'AGE')
 						(type (ref: Number)))))
 			(MSE.Class (id: 104)
 				(name 'Multiplication')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 186)
 						(name 'TSPAN')
 						(type (ref: Number)))
@@ -1341,7 +1341,7 @@
 			(MSE.Class (id: 87)
 				(name 'Developer')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 279)
 						(name 'NOPl')
 						(type (ref: Number)))
@@ -1372,7 +1372,7 @@
 			(MSE.Class (id: 476)
 				(name 'SourceCodeLine')
 				(superclass (idref: 468))
-				(attributes
+				(properties
 					(MSE.Property (id: 122)
 						(name 'AGE')
 						(type (ref: Number)))))))
@@ -1385,14 +1385,14 @@
 			(MSE.Class (id: 218)
 				(name 'CvsDirectory')
 				(superclass (idref: 518))
-				(attributes
+				(properties
 					(MSE.Property (id: 342)
 						(name 'entry')
 						(type (idref: 518)))))
 			(MSE.Class (id: 203)
 				(name 'Author')
 				(superclass (idref: 9))
-				(attributes
+				(properties
 					(MSE.Property (id: 492)
 						(name 'NOF')
 						(type (ref: Number)))
@@ -1446,7 +1446,7 @@
 			(MSE.Class (id: 481)
 				(name 'FileVersion')
 				(superclass (idref: 9))
-				(attributes
+				(properties
 					(MSE.Property (id: 273)
 						(name 'REV')
 						(type (ref: Number)))
@@ -1490,7 +1490,7 @@
 			(MSE.Class (id: 331)
 				(name 'FileHistoryGroup')
 				(superclass (idref: 265))
-				(attributes
+				(properties
 					(MSE.Property (id: 172)
 						(name 'distribution')
 						(type (ref: Number)))
@@ -1500,7 +1500,7 @@
 			(MSE.Class (id: 59)
 				(name 'FileHistory')
 				(superclass (idref: 9))
-				(attributes
+				(properties
 					(MSE.Property (id: 367)
 						(name 'SoRL')
 						(type (ref: Number)))
@@ -1533,7 +1533,7 @@
 			(MSE.Class (id: 111)
 				(name 'CvsFileVersion')
 				(superclass (idref: 179))
-				(attributes
+				(properties
 					(MSE.Property (id: 174)
 						(name 'timestamp')
 						(type (idref: 388)))
@@ -1568,7 +1568,7 @@
 			(MSE.Class (id: 431)
 				(name 'Project')
 				(superclass (idref: 9))
-				(attributes
+				(properties
 					(MSE.Property (id: 521)
 						(name 'Name')
 						(type (ref: Number)))
@@ -1608,7 +1608,7 @@
 			(MSE.Class (id: 529)
 				(name 'CvsFileHistory')
 				(superclass (idref: 179))
-				(attributes
+				(properties
 					(MSE.Property (id: 55)
 						(name 'version')
 						(opposite (idref: 143))
@@ -1616,7 +1616,7 @@
 			(MSE.Class (id: 322)
 				(name 'Commit')
 				(superclass (idref: 9))
-				(attributes
+				(properties
 					(MSE.Property (id: 437)
 						(name 'startTime')
 						(type (ref: Object)))
@@ -1664,7 +1664,7 @@
 			(MSE.Class (id: 299)
 				(name 'CvsFileChange')
 				(superclass (idref: 495))
-				(attributes
+				(properties
 					(MSE.Property (id: 11)
 						(name 'removedLinesSize')
 						(type (ref: Number)))
@@ -1674,7 +1674,7 @@
 			(MSE.Class (id: 518)
 				(name 'CvsEntry')
 				(superclass (idref: 495))
-				(attributes
+				(properties
 					(MSE.Property (id: 511)
 						(name 'path')
 						(type (ref: String)))

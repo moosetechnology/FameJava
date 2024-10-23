@@ -5,7 +5,7 @@
 			(FM3.Class (id: 332)
 				(name 'Alias')
 				(superclass (ref: 206))
-				(attributes
+				(properties
 					(FM3.Property (id: 233)
 						(name 'timestamp')
 						(type (ref: Number)))
@@ -37,7 +37,7 @@
 			(FM3.Class (id: 518)
 				(name 'TraceEntityAssociation')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 135)
 						(name 'aRel')
 						(type (ref: Number)))
@@ -68,7 +68,7 @@
 			(FM3.Class (id: 382)
 				(name 'Activation')
 				(superclass (ref: 243))
-				(attributes
+				(properties
 					(FM3.Property (id: 390)
 						(name 'argument')
 						(derived true)
@@ -98,7 +98,7 @@
 			(FM3.Class (id: 528)
 				(name 'TraceClassAssociation')
 				(superclass (ref: 518))
-				(attributes
+				(properties
 					(FM3.Property (id: 202)
 						(name 'Dedication')
 						(type (ref: Number)))
@@ -123,7 +123,7 @@
 			(FM3.Class (id: 206)
 				(name 'Reference')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 453)
 						(name 'NORM')
 						(type (ref: Number)))
@@ -136,14 +136,14 @@
 			(FM3.Class (id: 207)
 				(name 'Return')
 				(superclass (ref: 243))
-				(attributes
+				(properties
 					(FM3.Property (id: 51)
 						(name 'instanceId')
 						(type (ref: String)))))
 			(FM3.Class (id: 308)
 				(name 'TracePackageAssociation')
 				(superclass (ref: 518))
-				(attributes
+				(properties
 					(FM3.Property (id: 430)
 						(name 'tracepackageassociation')
 						(derived true)
@@ -152,7 +152,7 @@
 			(FM3.Class (id: 243)
 				(name 'AbstractEvent')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 459)
 						(name 'child')
 						(derived true)
@@ -175,7 +175,7 @@
 			(FM3.Class (id: 87)
 				(name 'HistoricalAlias')
 				(superclass (ref: 332))
-				(attributes
+				(properties
 					(FM3.Property (id: 121)
 						(name 'predecessor')
 						(opposite (ref: 245))
@@ -191,7 +191,7 @@
 			(FM3.Class (id: 246)
 				(name 'Trace')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 5)
 						(name 'NOMIf')
 						(type (ref: Number)))
@@ -255,7 +255,7 @@
 			(FM3.Class (id: 18)
 				(name 'Instance')
 				(superclass (ref: 206))
-				(attributes
+				(properties
 					(FM3.Property (id: 452)
 						(name 'alias')
 						(derived true)
@@ -278,7 +278,7 @@
 			(FM3.Class (id: 294)
 				(name 'TraceMethodAssociation')
 				(superclass (ref: 518))
-				(attributes
+				(properties
 					(FM3.Property (id: 265)
 						(name 'NORM')
 						(type (ref: Number)))
@@ -305,7 +305,7 @@
 			(FM3.Class (id: 403)
 				(name 'Developer')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 66)
 						(name 'NOPl')
 						(type (ref: Number)))
@@ -330,14 +330,14 @@
 			(FM3.Class (id: 286)
 				(name 'SourceCodeLine')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 34)
 						(name 'AGE')
 						(type (ref: Number)))))
 			(FM3.Class (id: 145)
 				(name 'Multiplication')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 212)
 						(name 'TSPAN')
 						(type (ref: Number)))
@@ -368,7 +368,7 @@
 			(FM3.Class (id: 111)
 				(name 'Detector')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 443)
 						(name 'AGE')
 						(type (ref: Number)))))
@@ -396,7 +396,7 @@
 			(FM3.Class (id: 412)
 				(name 'FileHistory')
 				(superclass (ref: 455))
-				(attributes
+				(properties
 					(FM3.Property (id: 63)
 						(name 'SoRL')
 						(type (ref: Number)))
@@ -430,7 +430,7 @@
 			(FM3.Class (id: 204)
 				(name 'FileVersion')
 				(superclass (ref: 455))
-				(attributes
+				(properties
 					(FM3.Property (id: 376)
 						(name 'REV')
 						(type (ref: Number)))
@@ -472,7 +472,7 @@
 			(FM3.Class (id: 42)
 				(name 'FileHistoryGroup')
 				(superclass (ref: 380))
-				(attributes
+				(properties
 					(FM3.Property (id: 93)
 						(name 'distribution')
 						(type (ref: Number)))
@@ -482,7 +482,7 @@
 			(FM3.Class (id: 142)
 				(name 'Commit')
 				(superclass (ref: 455))
-				(attributes
+				(properties
 					(FM3.Property (id: 146)
 						(name 'startTime')
 						(type (ref: String)))
@@ -522,7 +522,7 @@
 			(FM3.Class (id: 439)
 				(name 'CvsFileVersion')
 				(superclass (ref: 49))
-				(attributes
+				(properties
 					(FM3.Property (id: 162)
 						(name 'history')
 						(opposite (ref: 264))
@@ -557,7 +557,7 @@
 			(FM3.Class (id: 275)
 				(name 'CvsFileHistory')
 				(superclass (ref: 49))
-				(attributes
+				(properties
 					(FM3.Property (id: 264)
 						(name 'version')
 						(multivalued true)
@@ -569,7 +569,7 @@
 			(FM3.Class (id: 64)
 				(name 'Project')
 				(superclass (ref: 455))
-				(attributes
+				(properties
 					(FM3.Property (id: 231)
 						(name 'author')
 						(multivalued true)
@@ -614,7 +614,7 @@
 			(FM3.Class (id: 130)
 				(name 'CvsDirectory')
 				(superclass (ref: 493))
-				(attributes
+				(properties
 					(FM3.Property (id: 340)
 						(name 'entry')
 						(multivalued true)
@@ -622,7 +622,7 @@
 			(FM3.Class (id: 534)
 				(name 'CvsFileChange')
 				(superclass (ref: 365))
-				(attributes
+				(properties
 					(FM3.Property (id: 503)
 						(name 'removedLinesSize')
 						(type (ref: Number)))
@@ -635,7 +635,7 @@
 			(FM3.Class (id: 493)
 				(name 'CvsEntry')
 				(superclass (ref: 365))
-				(attributes
+				(properties
 					(FM3.Property (id: 255)
 						(name 'path')
 						(type (ref: String)))
@@ -651,7 +651,7 @@
 			(FM3.Class (id: 538)
 				(name 'Author')
 				(superclass (ref: 455))
-				(attributes
+				(properties
 					(FM3.Property (id: 219)
 						(name 'NOF')
 						(type (ref: Number)))
@@ -715,7 +715,7 @@
 			(FM3.Class (id: 199)
 				(name 'ClassGroup')
 				(superclass (ref: 297))
-				(attributes
+				(properties
 					(FM3.Property (id: 478)
 						(name 'A_NOA')
 						(type (ref: Number)))
@@ -734,7 +734,7 @@
 			(FM3.Class (id: 200)
 				(name 'NamespaceHistory')
 				(superclass (ref: 208))
-				(attributes
+				(properties
 					(FM3.Property (id: 69)
 						(name 'E_NOCls')
 						(type (ref: Number)))))
@@ -762,7 +762,7 @@
 			(FM3.Class (id: 208)
 				(name 'AbstractHistory')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 46)
 						(name 'AGE')
 						(type (ref: Number)))))
@@ -775,7 +775,7 @@
 			(FM3.Class (id: 14)
 				(name 'AbstractEntity')
 				(superclass (ref: 13))
-				(attributes
+				(properties
 					(FM3.Property (id: 467)
 						(name 'mooseModel')
 						(derived true)
@@ -784,7 +784,7 @@
 			(FM3.Class (id: 86)
 				(name 'ClassVersion')
 				(superclass (ref: 324))
-				(attributes
+				(properties
 					(FM3.Property (id: 486)
 						(name 'VA_NOM')
 						(type (ref: Number)))
@@ -809,7 +809,7 @@
 			(FM3.Class (id: 513)
 				(name 'AbstractGroup')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 181)
 						(name 'numberOfItems')
 						(type (ref: Number)))
@@ -823,7 +823,7 @@
 			(FM3.Class (id: 216)
 				(name 'ClassHistory')
 				(superclass (ref: 208))
-				(attributes
+				(properties
 					(FM3.Property (id: 67)
 						(name 'Last_NOM')
 						(type (ref: Number)))
@@ -887,7 +887,7 @@
 			(FM3.Class (id: 24)
 				(name 'MethodVersion')
 				(superclass (ref: 324))
-				(attributes
+				(properties
 					(FM3.Property (id: 442)
 						(name 'VE_NOS')
 						(type (ref: Number)))
@@ -903,7 +903,7 @@
 			(FM3.Class (id: 527)
 				(name 'MethodGroup')
 				(superclass (ref: 297))
-				(attributes
+				(properties
 					(FM3.Property (id: 221)
 						(name 'A_NOP')
 						(type (ref: Number)))
@@ -931,7 +931,7 @@
 			(FM3.Class (id: 424)
 				(name 'NamespaceVersion')
 				(superclass (ref: 324))
-				(attributes
+				(properties
 					(FM3.Property (id: 490)
 						(name 'VA_NOM')
 						(type (ref: Number)))
@@ -944,7 +944,7 @@
 			(FM3.Class (id: 492)
 				(name 'Model')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 343)
 						(name 'sourceLanguage')
 						(type (ref: String)))
@@ -977,7 +977,7 @@
 			(FM3.Class (id: 201)
 				(name 'Invocation')
 				(superclass (ref: 369))
-				(attributes
+				(properties
 					(FM3.Property (id: 422)
 						(name 'receivingVariable')
 						(type (ref: 386)))
@@ -999,7 +999,7 @@
 			(FM3.Class (id: 136)
 				(name 'Function')
 				(superclass (ref: 420))
-				(attributes
+				(properties
 					(FM3.Property (id: 531)
 						(name 'belongsTo')
 						(opposite (ref: 7))
@@ -1007,7 +1007,7 @@
 			(FM3.Class (id: 431)
 				(name 'Folder')
 				(superclass (ref: 411))
-				(attributes
+				(properties
 					(FM3.Property (id: 388)
 						(name 'folder')
 						(derived true)
@@ -1030,7 +1030,7 @@
 			(FM3.Class (id: 464)
 				(name 'Class')
 				(superclass (ref: 9))
-				(attributes
+				(properties
 					(FM3.Property (id: 105)
 						(name 'PubM')
 						(type (ref: Number)))
@@ -1192,7 +1192,7 @@
 			(FM3.Class (id: 81)
 				(name 'Package')
 				(superclass (ref: 387))
-				(attributes
+				(properties
 					(FM3.Property (id: 523)
 						(name 'TLOC')
 						(type (ref: Number)))
@@ -1216,14 +1216,14 @@
 			(FM3.Class (id: 9)
 				(name 'AbstractScopable')
 				(superclass (ref: 387))
-				(attributes
+				(properties
 					(FM3.Property (id: 444)
 						(name 'belongsTo')
 						(type (ref: 487)))))
 			(FM3.Class (id: 177)
 				(name 'JSPAccess')
 				(superclass (ref: 369))
-				(attributes
+				(properties
 					(FM3.Property (id: 368)
 						(name 'accesses')
 						(type (ref: 387)))
@@ -1233,7 +1233,7 @@
 			(FM3.Class (id: 469)
 				(name 'JSPInvocation')
 				(superclass (ref: 369))
-				(attributes
+				(properties
 					(FM3.Property (id: 500)
 						(name 'candidate')
 						(multivalued true)
@@ -1252,7 +1252,7 @@
 			(FM3.Class (id: 209)
 				(name 'Method')
 				(superclass (ref: 420))
-				(attributes
+				(properties
 					(FM3.Property (id: 15)
 						(name 'NIJSPI')
 						(type (ref: Number)))
@@ -1334,7 +1334,7 @@
 			(FM3.Class (id: 311)
 				(name 'Attribute')
 				(superclass (ref: 90))
-				(attributes
+				(properties
 					(FM3.Property (id: 496)
 						(name 'accessControlQualifier')
 						(type (ref: String)))
@@ -1366,7 +1366,7 @@
 			(FM3.Class (id: 405)
 				(name 'InheritanceDefinition')
 				(superclass (ref: 369))
-				(attributes
+				(properties
 					(FM3.Property (id: 168)
 						(name 'accessControlQualifier')
 						(type (ref: String)))
@@ -1384,7 +1384,7 @@
 			(FM3.Class (id: 248)
 				(name 'JSPPage')
 				(superclass (ref: 387))
-				(attributes
+				(properties
 					(FM3.Property (id: 211)
 						(name 'filedIn')
 						(type (ref: String)))
@@ -1400,7 +1400,7 @@
 			(FM3.Class (id: 483)
 				(name 'AbstractArgument')
 				(superclass (ref: 386))
-				(attributes
+				(properties
 					(FM3.Property (id: 407)
 						(name 'position')
 						(type (ref: Number)))
@@ -1410,7 +1410,7 @@
 			(FM3.Class (id: 90)
 				(name 'AbstractStructuralEntity')
 				(superclass (ref: 387))
-				(attributes
+				(properties
 					(FM3.Property (id: 501)
 						(name 'hostedAlias')
 						(derived true)
@@ -1428,7 +1428,7 @@
 			(FM3.Class (id: 190)
 				(name 'Literal')
 				(superclass (ref: 386))
-				(attributes
+				(properties
 					(FM3.Property (id: 107)
 						(name 'content')
 						(type (ref: String)))
@@ -1448,7 +1448,7 @@
 			(FM3.Class (id: 377)
 				(name 'AbstractLocalEntity')
 				(superclass (ref: 90))
-				(attributes
+				(properties
 					(FM3.Property (id: 530)
 						(name 'belongsTo')
 						(type (ref: 420)))))
@@ -1458,7 +1458,7 @@
 			(FM3.Class (id: 350)
 				(name 'JSPAttribute')
 				(superclass (ref: 387))
-				(attributes
+				(properties
 					(FM3.Property (id: 218)
 						(name 'declaredType')
 						(type (ref: 464)))
@@ -1471,7 +1471,7 @@
 			(FM3.Class (id: 487)
 				(name 'Namespace')
 				(superclass (ref: 9))
-				(attributes
+				(properties
 					(FM3.Property (id: 484)
 						(name 'NOA')
 						(type (ref: Number)))
@@ -1535,14 +1535,14 @@
 			(FM3.Class (id: 57)
 				(name 'UnknownVariable')
 				(superclass (ref: 90))
-				(attributes
+				(properties
 					(FM3.Property (id: 417)
 						(name 'usedInContext')
 						(type (ref: 420)))))
 			(FM3.Class (id: 420)
 				(name 'AbstractBehaviouralEntity')
 				(superclass (ref: 387))
-				(attributes
+				(properties
 					(FM3.Property (id: 192)
 						(name 'outgoingInvocation')
 						(derived true)
@@ -1624,7 +1624,7 @@
 			(FM3.Class (id: 100)
 				(name 'Comment')
 				(superclass (ref: 386))
-				(attributes
+				(properties
 					(FM3.Property (id: 325)
 						(name 'content')
 						(type (ref: String)))
@@ -1634,7 +1634,7 @@
 			(FM3.Class (id: 62)
 				(name 'Include')
 				(superclass (ref: 369))
-				(attributes
+				(properties
 					(FM3.Property (id: 373)
 						(name 'includingFile')
 						(type (ref: 28)))
@@ -1644,7 +1644,7 @@
 			(FM3.Class (id: 28)
 				(name 'File')
 				(superclass (ref: 411))
-				(attributes
+				(properties
 					(FM3.Property (id: 529)
 						(name 'TLOT')
 						(type (ref: Number)))
@@ -1691,21 +1691,21 @@
 			(FM3.Class (id: 288)
 				(name 'FormalParameter')
 				(superclass (ref: 377))
-				(attributes
+				(properties
 					(FM3.Property (id: 39)
 						(name 'position')
 						(type (ref: Number)))))
 			(FM3.Class (id: 326)
 				(name 'GlobalVariable')
 				(superclass (ref: 90))
-				(attributes
+				(properties
 					(FM3.Property (id: 348)
 						(name 'belongsTo')
 						(type (ref: 487)))))
 			(FM3.Class (id: 532)
 				(name 'ModelRoot')
 				(superclass (ref: 14))
-				(attributes
+				(properties
 					(FM3.Property (id: 507)
 						(name 'stub')
 						(type (ref: Boolean)))))
@@ -1715,21 +1715,21 @@
 			(FM3.Class (id: 491)
 				(name 'ImplicitVariable')
 				(superclass (ref: 90))
-				(attributes
+				(properties
 					(FM3.Property (id: 429)
 						(name 'belongsTo')
 						(type (ref: 464)))))
 			(FM3.Class (id: 386)
 				(name 'AbstractObject')
 				(superclass (ref: 532))
-				(attributes
+				(properties
 					(FM3.Property (id: 289)
 						(name 'sourceAnchor')
 						(type (ref: String)))))
 			(FM3.Class (id: 171)
 				(name 'Access')
 				(superclass (ref: 369))
-				(attributes
+				(properties
 					(FM3.Property (id: 241)
 						(name 'accesses')
 						(opposite (ref: 178))
@@ -1744,7 +1744,7 @@
 			(FM3.Class (id: 387)
 				(name 'AbstractNamedEntity')
 				(superclass (ref: 386))
-				(attributes
+				(properties
 					(FM3.Property (id: 526)
 						(name 'NL')
 						(type (ref: Number)))

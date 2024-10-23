@@ -4,7 +4,7 @@
       (classes
           (FM3.Class
               (name 'Library')
-              (attributes
+              (properties
                   (FM3.Property
                       (name 'librarian')
                       (type (ref: 2)))
@@ -14,7 +14,7 @@
                       (type (ref: 1)))))
           (FM3.Class (id: 1)
               (name 'Book')
-              (attributes
+              (properties
                   (FM3.Property
                       (name 'title')
                       (type (ref: String)))
@@ -24,7 +24,7 @@
                       (type (ref: 2)))))
           (FM3.Class (id: 2)
               (name 'Person')
-              (attributes
+              (properties
                   (FM3.Property
                       (name 'name')
                       (type (ref: String))))))))

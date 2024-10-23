@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import ch.akuhn.fame.FameDescription;
 import ch.akuhn.fame.FamePackage;

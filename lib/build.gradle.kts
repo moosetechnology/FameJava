@@ -56,7 +56,7 @@ publishing {
     publications {
       register<MavenPublication>("gpr") {
         groupId = "org.moosetechnology"
-        artifactId = "famejava"
+        artifactId = "fame-java"
         from(components["java"])
         pom {
           name = "Fame Java"

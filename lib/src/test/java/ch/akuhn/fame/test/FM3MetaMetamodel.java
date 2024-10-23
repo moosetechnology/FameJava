@@ -45,7 +45,7 @@ public class FM3MetaMetamodel {
     @Test
     public void has4Classes() {
         MetaRepository m3 = MetaRepository.createFM3();
-        assertEquals(4, m3.allClassDescriptions().size());
+        assertEquals(6, m3.allClassDescriptions().size());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class FM3MetaMetamodel {
     @Test
     public void has20Properties() {
         MetaRepository m3 = MetaRepository.createFM3();
-        assertEquals(20, m3.allPropertyDescriptions().size());
+        assertEquals(24, m3.allPropertyDescriptions().size());
     }
     
     @Test

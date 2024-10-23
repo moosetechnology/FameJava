@@ -57,6 +57,7 @@ publishing {
       register<MavenPublication>("gpr") {
         groupId = "org.moosetechnology"
         artifactId = "fame-java"
+        version = System.getenv("VERSION")
         from(components["java"])
         pom {
           name = "Fame Java"

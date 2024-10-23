@@ -53,5 +53,16 @@ publishing {
         password = System.getenv("GITHUB_TOKEN")
       }
     }
+    publications {
+      register<MavenPublication>("gpr") {
+        groupId = "org.moosetechnology"
+        artifactId = "famejava"
+        from(components["java"])
+        pom {
+          name = "Fame Java"
+          url = "https://github.com/moosetechnology/FameJava"
+        }
+      }
+    }
   }
 }

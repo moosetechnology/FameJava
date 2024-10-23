@@ -88,8 +88,11 @@ public class TermBagExample {
     }
     
     @Test
-    @Given("emptyModel;emptyDocument")
-    public Repository modelWithEmptyDocument(Repository m, Document d) {
+    @Given("emptyDocument")
+    public Repository modelWithEmptyDocument(Document d) {
+        Tower t = new Tower();
+        t.metamodel.with(Document.class);
+        Repository m = t.model;
         m.add(d);
         assert m.size() == 1;
         return m;
@@ -129,8 +132,9 @@ public class TermBagExample {
     }
     
     @Test
-    @Given("tower")
-    public Repository importModelWithSomeDocument(Tower t) {
+    public Repository importModelWithSomeDocument() {
+        Tower t = new Tower();
+        t.metamodel.with(Document.class);
         assert t.model.size() == 0;
         t.model.importMSE(SOME_DOCUMENT);
         assert t.model.size() == 1;

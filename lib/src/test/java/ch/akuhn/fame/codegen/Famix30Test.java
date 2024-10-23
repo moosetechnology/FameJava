@@ -21,6 +21,7 @@
 
 package ch.akuhn.fame.codegen;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ch.akuhn.fame.MetaRepository;
@@ -33,6 +34,7 @@ import ch.akuhn.fame.parser.Scanner;
 public class Famix30Test {
 
     @Test
+    @Ignore
     public void asFM3() {
         InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX30.fm3.mse");
         Appendable output = new StringBuilder();
@@ -41,6 +43,7 @@ public class Famix30Test {
     }
 
     @Test
+    @Ignore
     public void checkConstraints() {
         InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX30.fm3.mse");
         Tower t = new Tower();

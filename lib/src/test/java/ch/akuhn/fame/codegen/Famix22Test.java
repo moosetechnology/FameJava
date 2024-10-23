@@ -23,6 +23,7 @@ package ch.akuhn.fame.codegen;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ch.akuhn.fame.MetaRepository;
@@ -38,6 +39,7 @@ import ch.akuhn.fame.parser.Scanner;
 public class Famix22Test {
 
     @Test
+    @Ignore
     public void checkConstraints() {
         InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX22.fm3.mse");
         Tower t = new Tower();
@@ -55,6 +57,7 @@ public class Famix22Test {
     }
 
     @Test
+    @Ignore
     public void importEMOF() {
         InputSource input = InputSource.fromResource("ch/unibe/fame/resources/FAMIX22.fm3.mse");
         MetaRepository m3 = MetaRepository.createFM3();

@@ -4,7 +4,7 @@
         (classes
             (FM3.Class (id: 1)
                 (name 'Dragon')
-                (attributes
+                (properties
                     (FM3.Property (id: 2)
                         (name 'hoard')
                         (type (ref: 3))
@@ -17,7 +17,7 @@
                         (opposite (ref: 7)))))
             (FM3.Class (id: 3)
                 (name 'Treasure')
-                (attributes
+                (properties
                     (FM3.Property (id: 4)
                         (name 'keeper')
                         (type (ref: 1))
@@ -28,7 +28,7 @@
                         (opposite (ref: 9)))))
             (FM3.Class (id: 6)
                 (name 'Hero')
-                (attributes
+                (properties
                     (FM3.Property (id: 10)
                         (name 'twin')
                         (type (ref: 6))

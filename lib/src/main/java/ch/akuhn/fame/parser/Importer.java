@@ -73,7 +73,7 @@ public class Importer extends AbstractParserClient {
             public Attr(String name) {
                 this.attributeName = name;
                 this.openReferences = 0;
-                this.values = new ArrayList();
+                this.values = new ArrayList<Object>();
             }
 
             public void add(Object value) {

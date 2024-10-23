@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import ch.akuhn.fame.FameDescription;
 import ch.akuhn.fame.FamePackage;
@@ -12,15 +11,8 @@ import ch.akuhn.fame.FameProperty;
 import ch.akuhn.fame.Tower;
 import ch.akuhn.fame.fm3.MetaDescription;
 import ch.akuhn.fame.fm3.PropertyDescription;
-import ch.unibe.jexample.Given;
-import ch.unibe.jexample.Injection;
-import ch.unibe.jexample.InjectionPolicy;
-import ch.unibe.jexample.JExample;
-
 
 @FamePackage("Test")
-@RunWith(JExample.class)
-@Injection(InjectionPolicy.NONE)
 public class ArrayFieldTest {
 
     @FameDescription
@@ -30,7 +22,7 @@ public class ArrayFieldTest {
     }
     
     @Test
-    public Tower metamodel() {
+    public void metamodel() {
         Tower t = new Tower();
         t.metamodel.with(Dummy.class);
         assertEquals(1, t.metamodel.allClassDescriptions().size());
@@ -39,12 +31,12 @@ public class ArrayFieldTest {
         assertEquals(true, prop.isMultivalued());
         assertEquals(true, prop.isPrimitive());
         assertEquals(MetaDescription.NUMBER, prop.getType());
-        return t;
     }
     
     @Test
-    @Given("#metamodel")
-    public String exportModel(Tower t) {
+    public void exportModel() {
+        Tower t = new Tower();
+        t.metamodel.with(Dummy.class);
         assertEquals(0, t.model.size());
         Dummy d = new Dummy();
         d.array = new float[] { 0.5f, 1.0f, 2.75f };
@@ -52,13 +44,20 @@ public class ArrayFieldTest {
         assertEquals(1, t.model.size());
         String mse = t.model.exportMSE();
         assertTrue(mse.contains("(array 0.5 1.0 2.75)"));
-        return mse;
     }
 
     @Test
-    @Given("#exportModel")
-    public void importModel(String mse) {
+    public void importModel() {
+        // Init
         Tower t = new Tower();
+        t.metamodel.with(Dummy.class);
+        Dummy d = new Dummy();
+        d.array = new float[] { 0.5f, 1.0f, 2.75f };
+        t.model.add(d);
+        String mse = t.model.exportMSE();
+
+        // Tests
+        t = new Tower();
         t.metamodel.with(Dummy.class);
         assertEquals(0, t.model.size());
         t.model.importMSE(mse);

@@ -47,7 +47,7 @@ publishing {
   repositories {
     maven {
       name = "GitHubPackages"
-      url = "https://maven.pkg.github.com/moosetechnology/FameJava"
+      url = uri("https://maven.pkg.github.com/moosetechnology/FameJava")
       credentials {
         username = System.getenv("GITHUB_ACTOR")
         password = System.getenv("GITHUB_TOKEN")

@@ -15,13 +15,8 @@ import ch.akuhn.fame.Repository;
 import ch.akuhn.fame.Tower;
 import ch.akuhn.util.Bag;
 import ch.akuhn.util.Strings;
-import ch.unibe.jexample.Given;
-import ch.unibe.jexample.Injection;
-import ch.unibe.jexample.InjectionPolicy;
-import ch.unibe.jexample.JExample;
 
-@RunWith(JExample.class)
-@Injection(InjectionPolicy.NONE)
+
 public class TermBagExample {
 
     private static final String EMPTY_DOCUMENT = 
@@ -67,45 +62,39 @@ public class TermBagExample {
     }
     
     @Test
-    public Tower tower() {
+    public void tower() {
         Tower t = new Tower();
         t.metamodel.with(Document.class);
         assert t.metamodel.allPackageDescriptions().size() == 1;
         assert t.metamodel.allClassDescriptions().size() == 1;
         assert t.metamodel.allPropertyDescriptions().size() == 2;
-        return t;
     }
     
-    @Test
-    @Given("tower")
-    public Repository emptyModel(Tower t) {
+    public Repository emptyModel() {
+        Tower t = new Tower();
+        t.metamodel.with(Document.class);
         return t.model;
     }
     
-    @Test
-    public Document emptyDocument() {
-        return new Document();
-    }
-    
-    @Test
-    @Given("emptyDocument")
     public Repository modelWithEmptyDocument(Document d) {
         Tower t = new Tower();
         t.metamodel.with(Document.class);
         Repository m = t.model;
-        m.add(d);
+        m.add(new Document());
         assert m.size() == 1;
         return m;
     }
     
     @Test
-    @Given("modelWithEmptyDocument")
-    public void exportModelWithEmptyDocument(Repository r) {
+    public void exportModelWithEmptyDocument() {
+        Tower t = new Tower();
+        t.metamodel.with(Document.class);
+        Repository r = t.model;
+        r.add(new Document());
         String s = r.exportMSE();
         assertEquals(EMPTY_DOCUMENT, normalizeWhitespace(s));
     }
     
-    @Test
     public Document someDocument() {
         Document d = new Document();
         d.terms.add("to", 2);
@@ -116,23 +105,25 @@ public class TermBagExample {
     }
     
     @Test
-    @Given("emptyModel;someDocument")
-    public Repository modelWithSomeDocument(Repository m, Document d) {
+    public void modelWithSomeDocument() {
+        Repository m = this.emptyModel();
+        Document d = this.someDocument();
         m.add(d);
         assert m.size() == 1;
-        return m;
     }
     
     @Test
-    @Given("modelWithSomeDocument")
-    public void exportModelWithSomeDocument(Repository r) {
+    public void exportModelWithSomeDocument() {
+        Repository r = this.emptyModel();
+        Document d = this.someDocument();
+        r.add(d);
         String s = r.exportMSE();
         // TODO fragile test, order of terms may differ if hash key of interned strings diffs or if abg impl diffs
         // assertEquals(SOME_DOCUMENT, normalizeWhitespace(s));
     }
     
     @Test
-    public Repository importModelWithSomeDocument() {
+    public void importModelWithSomeDocument() {
         Tower t = new Tower();
         t.metamodel.with(Document.class);
         assert t.model.size() == 0;
@@ -144,7 +135,6 @@ public class TermBagExample {
         assert d.terms.occurrences("to") == 2;
         assert d.terms.occurrences("or") == 1;
         assert d.terms.occurrences("not") == 1;
-        return t.model;
     }
     
     private static String normalizeWhitespace(String s) {

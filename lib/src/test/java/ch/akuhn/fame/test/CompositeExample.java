@@ -95,7 +95,7 @@ public class CompositeExample {
     public Tower tower(Tower t) {
         assertEquals(0, t.getModel().size());
         assertEquals(0, t.getMetamodel().size());
-        assertEquals(25, t.getMetaMetamodel().size());
+        assertEquals(31, t.getMetaMetamodel().size());
         return t;
     }
     

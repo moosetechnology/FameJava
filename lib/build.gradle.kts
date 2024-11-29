@@ -29,10 +29,6 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(libs.guava)
 
-    // https://mvnrepository.com/artifact/net.sf.jexample/jexample
-    implementation("net.sf.jexample:jexample:4.4-378")
-
-
     implementation(fileTree("lib") { include("*.jar") })
 }
 

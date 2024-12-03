@@ -3,15 +3,12 @@ package ch.akuhn.fame.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import ch.akuhn.fame.FameDescription;
 import ch.akuhn.fame.FamePackage;
@@ -20,13 +17,8 @@ import ch.akuhn.fame.MetaRepository;
 import ch.akuhn.fame.Repository;
 import ch.akuhn.fame.Tower;
 import ch.akuhn.fame.fm3.PropertyDescription;
-import ch.unibe.jexample.Given;
-import ch.unibe.jexample.Injection;
-import ch.unibe.jexample.InjectionPolicy;
-import ch.unibe.jexample.JExample;
 
-@RunWith(JExample.class)
-@Injection(InjectionPolicy.NONE)
+
 public class CompositeExample {
 
     @FameDescription
@@ -46,7 +38,7 @@ public class CompositeExample {
     static class Container extends Composite {
 
         @FameProperty(opposite = "parent")
-        public Collection<Composite> children = new ArrayList();
+        public Collection<Composite> children = new ArrayList<>();
 
         @Override
         public int getTotalCount() {
@@ -72,147 +64,166 @@ public class CompositeExample {
 
     }
 
-    @Test
     public Tower createTower() {
         Tower t = new Tower();
-        assertNotNull(t.getMetaMetamodel());
-        assertNotNull(t.getMetamodel());
-        assertNotNull(t.getModel());
         return t;
-    }
-    
-    @Test
-    @Given("#createTower")
-    public Tower towerHasLayers(Tower t) {
-        assertEquals(t.getModel().getMetamodel(), t.getMetamodel());
-        assertEquals(t.getMetamodel().getMetamodel(), t.getMetaMetamodel());
-        assertEquals(t.getMetaMetamodel().getMetamodel(), t.getMetaMetamodel());
-        return t;
-    }
-    
-    @Test
-    @Given("#towerHasLayers")
-    public Tower tower(Tower t) {
-        assertEquals(0, t.getModel().size());
-        assertEquals(0, t.getMetamodel().size());
-        assertEquals(31, t.getMetaMetamodel().size());
-        return t;
-    }
-    
-    @Test
-    @Ignore // FIXME
-    @Given("model;newParent;newChildA;newChildB")
-    public Repository createInstances(Repository $) {
-        assertEquals(3, $.getElements().size());
-        return $;
     }
 
     @Test
-    @Given("model;parentWithChildren")
-    public String exportMSE(Repository m) {
+    public void testCreateTower() {
+        Tower t = createTower();
+        assertNotNull(t.getMetaMetamodel());
+        assertNotNull(t.getMetamodel());
+        assertNotNull(t.getModel());
+    }
+    
+    @Test
+    public void towerHasLayers() {
+        Tower t = this.createTower();
+        assertEquals(t.getModel().getMetamodel(), t.getMetamodel());
+        assertEquals(t.getMetamodel().getMetamodel(), t.getMetaMetamodel());
+        assertEquals(t.getMetaMetamodel().getMetamodel(), t.getMetaMetamodel());
+    }
+    
+    @Test
+    public void tower() {
+        Tower t = this.createTower();
+        assertEquals(0, t.getModel().size());
+        assertEquals(0, t.getMetamodel().size());
+        assertEquals(31, t.getMetaMetamodel().size());
+    }
+    
+    // @Test
+    // @Ignore // FIXME
+    // public Repository createInstances(Repository $) {
+    //     assertEquals(3, $.getElements().size());
+    //     return $;
+    // }
+
+    public String exportMSE() {
+        Repository m = model();
+        setParentWithChildren(m);
         String mse = m.exportMSE();
         return mse;
     }
 
     @Test
-    @Ignore // FIXME
-    @Given("tower;exportMSE;metamodel")
-    public Repository importMSE(Tower t, String mse) {
-        t.getModel().importMSE(mse);
-        Repository m = t.getModel();
-        assertEquals(3, m.getElements().size());
-        return m;
+    public void testExportMSE() {
+        String mse = exportMSE();
+        // 165 is the magic number of the size of the string. I wanted to test that the string size is more than 2 char (not empty model)
+        assertEquals(165, mse.length());
+
     }
 
     @Test
-    @Ignore // FIXME
-    @Given("model;model")
-    public void jexampleKeepWorksFine(Repository m1, Repository m2) {
-        assertSame(m1, m2);
+    public void importMSE() {
+        String mse = exportMSE();
+        Repository model = model();
+        model.importMSE(mse);
+        assertEquals(3, model.getElements().size());
     }
 
-    @Test
-    @Given("#tower")
-    public MetaRepository metamodel(Tower t) {
+    public MetaRepository metamodel () {
+        Tower t = new Tower();
         t.getMetamodel().withAll(Composite.class, Container.class, Leaf.class);
         MetaRepository $ = t.getMetamodel();
+        return $;
+    }
+
+    @Test
+    public void testMetamodel() {
+        MetaRepository $ = metamodel();
         assertEquals(3, $.allClassDescriptions().size());
         assertEquals(4, $.all(PropertyDescription.class).size());
+    }
+
+    public Repository model() {
+        MetaRepository metamodel = metamodel();
+        Repository $ = new Repository(metamodel);
         return $;
     }
 
     @Test
-    @Given("metamodelNames")
-    public Repository model(MetaRepository metamodel) {
+    public void testModel() {
+        MetaRepository metamodel = metamodel();
         Repository $ = new Repository(metamodel);
         assertEquals(metamodel, $.getMetamodel());
-        return $;
     }
 
-    @Test
-    @Given("metamodel")
-    public MetaRepository metamodelNames(MetaRepository mm) {
-        assertNull(mm.descriptionNamed("FAME"));
-        assertNotNull(mm.descriptionNamed("TEST.Container"));
-        assertNotNull(mm.descriptionNamed("TEST.Leaf"));
-        assertNotNull(mm.descriptionNamed("TEST.Composite"));
-        return mm;
-    }
 
     @Test
-    @Given("model")
+    public void testMetamodelNames() {
+        MetaRepository metamodel = metamodel();
+        assertNull(metamodel.descriptionNamed("FAME"));
+        assertNotNull(metamodel.descriptionNamed("TEST.Container"));
+        assertNotNull(metamodel.descriptionNamed("TEST.Leaf"));
+        assertNotNull(metamodel.descriptionNamed("TEST.Composite"));
+    }
+
     public Leaf newChildA(Repository repo) {
         Object $ = repo.newInstance("TEST.Leaf");
-        assertNotNull($);
-        assertEquals(Leaf.class, $.getClass());
         return (Leaf) $;
     }
 
     @Test
-    @Given("model")
+    public void testNewChildA() {
+        Object $ = newChildA(model());
+        assertNotNull($);
+        assertEquals(Leaf.class, $.getClass());
+    }
+
     public Leaf newChildB(Repository repo) {
         Object $ = repo.newInstance("TEST.Leaf");
-        assertNotNull($);
-        assertEquals(Leaf.class, $.getClass());
         return (Leaf) $;
     }
 
     @Test
-    @Given("model")
+    public void testNewChildB() {
+        Object $ = newChildB(model());
+        assertNotNull($);
+        assertEquals(Leaf.class, $.getClass());
+    }
+
     public Container newParent(Repository repo) {
         Object $ = repo.newInstance("TEST.Container");
-        assertNotNull($);
-        assertEquals(Container.class, $.getClass());
         return (Container) $;
     }
 
     @Test
-    @Given("model;newChildA")
-    public Leaf numberPropertyA(Repository m, Leaf a) {
+    public void testNewParent() {
+        Object $ = newParent(model());
+        assertNotNull($);
+        assertEquals(Container.class, $.getClass());
+        
+    }
+
+    @Test
+    public void numberPropertyA() {
+        Repository m = model();
+        Leaf a = newChildA(m);
         assertEquals((Integer) 0, (Integer) a.count);
         assertEquals((Integer) 0, (Integer) m.read("count", a));
         m.write("count", a, 42);
         assertEquals(42, a.count);
         assertEquals((Integer)42, (Integer)m.read("count", a));
-        return a;
     }
 
     @Test
-    @Given("model;newChildB")
-    public Leaf numberPropertyB(Repository m, Leaf b) {
+    public void numberPropertyB() {
+        Repository m = model();
+        Leaf b = newChildB(m);
         assertEquals(0, b.count);
         assertEquals((Integer) 0, m.read("count", b));
         m.write("count", b, 23);
         assertEquals(23, b.count);
         assertEquals((Integer) 23, m.read("count", b));
-        return b;
     }
 
     @Test
-    @Given("metamodel;metamodelNames")
-    public void parentChildrenAreOpposite(MetaRepository mm) {
-        PropertyDescription parent = mm.descriptionNamed("TEST.Composite").attributeNamed("parent");
-        PropertyDescription children = mm.descriptionNamed("TEST.Container").attributeNamed("children");
+    public void parentChildrenAreOpposite() {
+        MetaRepository metamodel = metamodel();
+        PropertyDescription parent = metamodel.descriptionNamed("TEST.Composite").attributeNamed("parent");
+        PropertyDescription children = metamodel.descriptionNamed("TEST.Container").attributeNamed("children");
         assertNotNull(parent);
         assertNotNull(children);
         assertTrue(parent.hasOpposite());
@@ -221,9 +232,19 @@ public class CompositeExample {
         assertEquals(children, parent.getOpposite());
     }
 
+    public void setParentWithChildren(Repository m) {
+        Container p = newParent(m);
+        Leaf a = newChildA(m);
+        Leaf b = newChildB(m);
+        m.write("children", p, a, b);
+        }
+
     @Test
-    @Given("model;newParent;newChildA;newChildB;parentChildrenAreOpposite")
-    public Container parentWithChildren(Repository m, Container p, Leaf a, Leaf b) {
+    public void parentWithChildren() {
+        Repository m = model();
+        Container p = newParent(m);
+        Leaf a = newChildA(m);
+        Leaf b = newChildB(m);
         assertEquals(0, p.children.size());
         assertEquals(null, a.parent);
         assertEquals(null, b.parent);
@@ -231,6 +252,5 @@ public class CompositeExample {
         assertEquals(2, p.children.size());
         assertEquals(p, a.parent);
         assertEquals(p, b.parent);
-        return p;
     }
 }

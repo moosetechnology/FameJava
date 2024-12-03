@@ -20,19 +20,12 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
-    
+    testImplementation("junit:junit:4.13.2")
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api(libs.commons.math3)
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(libs.guava)
-
-    // https://mvnrepository.com/artifact/net.sf.jexample/jexample
-    implementation("net.sf.jexample:jexample:4.4-378")
-
-
     implementation(fileTree("lib") { include("*.jar") })
 }
 

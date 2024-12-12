@@ -24,6 +24,10 @@ public class JSONPrinterTest extends TestCase {
         System.out.println(stream);
     }
 
+    private static String removeWhiteSpaces(String input) {
+        return input.replaceAll("\\s+", "");
+    }
+
     @Override
     public void setUp() throws Exception {
         super.setUp();
@@ -69,11 +73,6 @@ public class JSONPrinterTest extends TestCase {
     public void testBeginElement() {
         printer.beginElement("Java.Class");
         assertEquals("{\"FM3\":\"Java.Class\"", removeWhiteSpaces(stream.toString()));
-    }
-
-
-    private static String removeWhiteSpaces(String input) {
-        return input.replaceAll("\\s+", "");
     }
 
     public void testEmptyEntityPrettyPrinter() {

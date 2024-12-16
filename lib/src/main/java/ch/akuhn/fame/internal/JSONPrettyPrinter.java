@@ -39,8 +39,7 @@ public class JSONPrettyPrinter extends AbstractPrintClient {
         lntabs();
         append("\"FM3\":\"");
         append(name);
-        append("\",");
-        lntabs();
+        append("\"");
     }
 
     public void beginMultivalue(String name) {
@@ -121,9 +120,10 @@ public class JSONPrettyPrinter extends AbstractPrintClient {
 
     @Override
     public void serial(int index) {
+    	printPropertySeparator();
+    	lntabs();
         append("\"id\":");
         append(String.valueOf(index));
-        append(",");
     }
 
     public void printEntitySeparator() {

@@ -79,6 +79,8 @@ public class RepositoryVisitor implements Runnable {
                     continue;
             }*/
             if (!values.isEmpty()) {
+            	visitor.printEntitySeparator();
+
                 visitor.beginAttribute(property.getName());
                 if (property.isMultivalued()) {
                     visitor.beginMultivalue(property.getName());
@@ -131,9 +133,6 @@ public class RepositoryVisitor implements Runnable {
                     visitor.endMultivalue(property.getName());
                 }
                 visitor.endAttribute(property.getName());
-                if (propertiesIterator.hasNext()) {
-                    visitor.printEntitySeparator();
-                }
             }
         }
     }

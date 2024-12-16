@@ -30,7 +30,7 @@ public class JSONPrinter extends AbstractPrintClient {
         append("{");
         append("\"FM3\":\"");
         append(name);
-        append("\",");
+        append("\"");
     }
 
     public void beginMultivalue(String name) {
@@ -104,9 +104,9 @@ public class JSONPrinter extends AbstractPrintClient {
 
     @Override
     public void serial(int index) {
+    	printPropertySeparator();
         append("\"id\":");
         append(String.valueOf(index));
-        append(",");
     }
 
     public void printEntitySeparator() {

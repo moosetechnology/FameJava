@@ -340,7 +340,7 @@ public class CodeGeneration {
         }
         // Properties from my traits that are not in my own properties
         Set<PropertyDescription> propertyDescriptionSet = new HashSet<>();
-        metaDescription.getTraits().stream()
+        metaDescription.computeAllTraits().stream()
                 .map(c -> c.getProperties().stream()
                         .filter(traitProperty -> propertyDescriptions.stream().noneMatch(myProperty -> myProperty.getName().equals(traitProperty.getName())))
                         .collect(Collectors.toList()))
@@ -365,7 +365,7 @@ public class CodeGeneration {
         code.setTraits(m.getTraits().stream().map(FM3Type::getName).collect(Collectors.toList()));
         code.addImport(FameDescription.class);
         code.addImport(FamePackage.class);
-        for (FM3Trait t : m.computeAllTraits()) {
+        for (FM3Trait t : m.getTraits()) {
             code.addImport(packageName(t.getPackage()), t.getName());
         }
 

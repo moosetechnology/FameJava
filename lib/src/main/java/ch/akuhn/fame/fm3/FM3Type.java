@@ -156,7 +156,7 @@ public class FM3Type extends Element {
         }
     }
 
-    @FameProperty(name="traits", opposite = "owner")
+    @FameProperty(name="traits", opposite = "users")
     public Collection<FM3Trait> getTraits() {
         return traits.values();
     }
@@ -174,11 +174,16 @@ public class FM3Type extends Element {
     }
 
     public Set<FM3Trait> computeAllTraits() {
-        Set<FM3Trait> traits = new HashSet<>();
-        traits.addAll(getTraits());
-        for (FM3Trait t : traits) {
-            traits.addAll(t.computeAllTraits());
+        Set<FM3Trait> computedTraits = new HashSet<>();
+        computedTraits.addAll(getTraits());
+        Set<FM3Trait> transitiveTraits = new HashSet<>();
+        
+        for (FM3Trait t : computedTraits) {
+            transitiveTraits.addAll(t.computeAllTraits());
         }
-        return traits;
+
+        computedTraits.addAll(transitiveTraits);
+        return computedTraits;
     }
+    
 }

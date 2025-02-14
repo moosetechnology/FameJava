@@ -86,13 +86,21 @@ public class FM3Trait extends FM3Type {
         super(name);
     }
 
-    FM3Type traitOwner;
-    @FameProperty(name = "owner", opposite = "traits")
-    public FM3Type getTraitOwner() {
-        return traitOwner;
-    }
-    public void setTraitOwner(FM3Type traitOwner){
-        this.traitOwner = traitOwner;
+    private Map<String, FM3Type> users = new HashMap<String, FM3Type>();
+
+    @FameProperty(name = "users", opposite = "traits")
+    public Collection<FM3Type> getUsers() {
+        return users.values();
     }
 
+    public void setUsers(Collection<FM3Type> users){
+        for (FM3Type user : users) {
+            this.addUser(user);
+        }
+    }
+
+    public void addUser(FM3Type user) {
+        users.put(user.getName(), user);
+    }
+    
 }

@@ -60,6 +60,45 @@ public abstract class AbstractPrintClient extends AbstractParserClient {
         }
     }
 
+    protected void appendJSONString(String value) {
+        append('"');
+        for (char character : value.toCharArray()) {
+            switch (character) {
+                case '"':
+                    append("\\\"");
+                    break;
+                case '\\':
+                    append("\\\\");
+                    break;
+                case '\b':
+                    append("\\b");
+                    break;
+                case '\f':
+                    append("\\f");
+                    break;
+                case '\n':
+                    append("\\n");
+                    break;
+                case '\r':
+                    append("\\r");
+                    break;
+                case '\t':
+                    append("\\t");
+                    break;
+                default:
+                    if (character < ' ') {
+                        append("\\u00");
+                        append(Character.forDigit(character >>> 4, 16));
+                        append(Character.forDigit(character & 0xf, 16));
+                    } else {
+                        append(character);
+                    }
+                    break;
+            }
+        }
+        append('"');
+    }
+
     protected void close() {
         Files.close(stream);
     }

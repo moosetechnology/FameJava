@@ -55,6 +55,12 @@ public class JSONPrinterTest extends TestCase {
         assertEquals( "\"print(\\\"Printer \\\" + name() + \\\" prints \\\"+ thePacket.contents(),false)\"", stream.toString());
     }
 
+    public void testPrimitiveWithControlCharacters() {
+        JSONPrinter compactPrinter = new JSONPrinter(stream);
+        compactPrinter.primitive("line one\nline two\t\b\f\r" + ((char) 0x001f));
+        assertEquals("\"line one\\nline two\\t\\b\\f\\r\\u001f\"", stream.toString());
+    }
+
     public void testReference() {
         printer.reference("hello");
         assertEquals("{\"ref\":\"hello\"}", removeWhiteSpaces(stream.toString()));

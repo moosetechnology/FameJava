@@ -20,9 +20,7 @@ public class JSONPrettyPrinter extends AbstractPrintClient {
     @Override
     public void beginAttribute(String name) {
         lntabs();
-        append("\"");
-        append(name);
-        append("\"");
+        appendJSONString(name);
         append(":");
 
     }
@@ -37,9 +35,8 @@ public class JSONPrettyPrinter extends AbstractPrintClient {
         this.indentation++;
         append("{");
         lntabs();
-        append("\"FM3\":\"");
-        append(name);
-        append("\"");
+        append("\"FM3\":");
+        appendJSONString(name);
     }
 
     public void beginMultivalue(String name) {
@@ -75,16 +72,7 @@ public class JSONPrettyPrinter extends AbstractPrintClient {
     @Override
     public void primitive(Object value) {
         if (value.getClass() == String.class){
-            append('"');
-            for (char c : ((String) value).toCharArray()) {
-                if (c == '"') {
-                    append('\\');
-                } else if (c == '\\') {
-                    append('\\');
-                }
-                append(c);
-            }
-            append('"');
+            appendJSONString((String) value);
         } else if (value instanceof Boolean || value instanceof Number) {
             append(value.toString());
         } else {
@@ -108,9 +96,7 @@ public class JSONPrettyPrinter extends AbstractPrintClient {
         append("{");
         append("\"ref\":");
         append(" ");
-        append("\"");
-        append(name);
-        append("\"");
+        appendJSONString(name);
         append("}");
     }
 

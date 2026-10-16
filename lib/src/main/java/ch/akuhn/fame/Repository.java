@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Map;
 
 import ch.akuhn.fame.MetaRepository.ClassNotMetadescribedException;
 import ch.akuhn.fame.fm3.MetaDescription;
@@ -206,6 +207,16 @@ public class Repository {
         this.addAll(importer.getResult().getElements());
     }
 
+    /**
+     * Imports an MSE document and returns the elements indexed by their MSE serial.
+     */
+    public Map<Integer, Object> importMSEWithSerials(InputSource input) {
+        Importer importer = new Importer(this.getMetamodel(), true);
+        importer.readFrom(input);
+        this.addAll(importer.getResult().getElements());
+        return importer.getSerials();
+    }
+
     public void importMSEFile(String name) {
         importMSE(InputSource.fromFilename(name));
     }
@@ -225,6 +236,15 @@ public class Repository {
     
     public void exportMSE(Appendable stream) {
         this.accept(new MSEPrinter(stream));
+    }
+
+    /**
+     * Exports this repository as MSE and returns each element's MSE serial.
+     */
+    public Map<Object, Integer> exportMSEWithSerials(Appendable stream) {
+        RepositoryVisitor visitor = new RepositoryVisitor(this, new MSEPrinter(stream), true);
+        visitor.run();
+        return visitor.getSerials();
     }
 
     public void exportJSONFile(String filename) {

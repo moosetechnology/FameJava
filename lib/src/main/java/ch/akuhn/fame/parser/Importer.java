@@ -20,6 +20,8 @@ package ch.akuhn.fame.parser;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -198,17 +200,30 @@ public class Importer extends AbstractParserClient {
 
     private Index index;
 
+    private Map<Integer, Object> serials;
+
+    private final boolean tracksSerials;
+
     private MetaRepository metamodel;
 
     private Repository model;
 
     public Importer(MetaRepository metamodel) {
-        this(metamodel, new Repository(metamodel));
+        this(metamodel, new Repository(metamodel), false);
+    }
+
+    public Importer(MetaRepository metamodel, boolean tracksSerials) {
+        this(metamodel, new Repository(metamodel), tracksSerials);
     }
 
     public Importer(MetaRepository metamodel, Repository model) {
+        this(metamodel, model, false);
+    }
+
+    private Importer(MetaRepository metamodel, Repository model, boolean tracksSerials) {
         this.metamodel = metamodel;
         this.model = model;
+        this.tracksSerials = tracksSerials;
     }
     
     @Override
@@ -238,6 +253,9 @@ public class Importer extends AbstractParserClient {
         assert elementStack.isEmpty();
         this.elementStack = null;
         assert !index.hasDanglingReferences();
+        if (tracksSerials) {
+            this.serials = Collections.unmodifiableMap(new LinkedHashMap<Integer, Object>(index.serials));
+        }
         this.index = null;
         for (Object element : elements) {
             model.add(element);
@@ -257,6 +275,13 @@ public class Importer extends AbstractParserClient {
 
     public Repository getResult() {
         return model;
+    }
+
+    public Map<Integer, Object> getSerials() {
+        if (serials == null) {
+            throw new IllegalStateException("No MSE document has been imported");
+        }
+        return serials;
     }
 
     @Override

@@ -38,16 +38,30 @@ public class RepositoryVisitor implements Runnable {
 
     private Repository repo;
     private Map<Object, Integer> index;
+    private Map<Object, Integer> serials;
+    private final boolean tracksSerials;
     private ParseClient visitor;
 
     public RepositoryVisitor(Repository repo, ParseClient visitor) {
+        this(repo, visitor, false);
+    }
+
+    public RepositoryVisitor(Repository repo, ParseClient visitor, boolean tracksSerials) {
         this.repo = repo;
         this.visitor = visitor;
+        this.tracksSerials = tracksSerials;
         this.index = new HashMap<Object, Integer>();
         int serial = 1;
         for (Object each : repo.getElements()) {
             index.put(each, serial++);
         }
+    }
+
+    public Map<Object, Integer> getSerials() {
+        if (serials == null) {
+            throw new IllegalStateException("The repository has not been exported");
+        }
+        return serials;
     }
 
     private void acceptElement(Object each) {
@@ -245,6 +259,9 @@ public class RepositoryVisitor implements Runnable {
     public void run() {
         assert index != null : "Can not run the same visitor twice.";
         this.acceptVisitor();
+        if (tracksSerials) {
+            this.serials = Collections.unmodifiableMap(new IdentityHashMap<Object, Integer>(index));
+        }
         index = null;
     }
 
